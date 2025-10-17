@@ -1,8 +1,8 @@
-<img style="position:relative;margin:0px;padding:0;top:40px" src="https://avatars.githubusercontent.com/u/29326763?s=200&v=4" width="64"/>
+<img style="position:relative;margin:0px;padding:0;top:68px" src="https://avatars.githubusercontent.com/u/29326763?s=200&v=4" width="90"/>
 
 <h1 style="margin-top:0px;padding-top:0px">The Cuarzo Framework</h1>
 
-This repository serves as a centralized system for building the Cuarzo framework, ensuring version compatibility across its subprojects.
+This repository serves as a centralized place for building the Cuarzo framework, ensuring version compatibility across its subprojects.
 
 ### Build
 
