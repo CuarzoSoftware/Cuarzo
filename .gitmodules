@@ -1,0 +1,27 @@
+[submodule "subprojects/cz-skia"]
+	path = subprojects/cz-skia
+	url = https://github.com/CuarzoSoftware/Skia.git
+[submodule "subprojects/cz-core"]
+	path = subprojects/cz-core
+	url = https://github.com/CuarzoSoftware/Core.git
+[submodule "subprojects/cz-xdgkit"]
+	path = subprojects/cz-xdgkit
+	url = https://github.com/CuarzoSoftware/XDGKit.git
+[submodule "subprojects/cz-srm"]
+	path = subprojects/cz-srm
+	url = https://github.com/CuarzoSoftware/SRM.git
+[submodule "subprojects/cz-ream"]
+	path = subprojects/cz-ream
+	url = https://github.com/CuarzoSoftware/Ream.git
+[submodule "subprojects/cz-kay"]
+	path = subprojects/cz-kay
+	url = https://github.com/CuarzoSoftware/Kay.git
+[submodule "subprojects/cz-marco"]
+	path = subprojects/cz-marco
+	url = https://github.com/CuarzoSoftware/Marco.git
+[submodule "subprojects/cz-crystals"]
+	path = subprojects/cz-crystals
+	url = https://github.com/CuarzoSoftware/Crystals.git
+[submodule "subprojects/cz-louvre"]
+	path = subprojects/cz-louvre
+	url = https://github.com/CuarzoSoftware/Louvre.git

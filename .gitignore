@@ -1,0 +1,8 @@
+**/builddir**
+**.user
+**.DS_Store
+**.autosave
+**.vscode
+**.mkv
+**/tmp**
+/build
