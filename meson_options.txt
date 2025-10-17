@@ -1,0 +1,44 @@
+option('with_skia',
+       type : 'boolean',
+       value : true,
+       description : 'Enable building Skia')
+
+option('with_core',
+       type : 'boolean',
+       value : true,
+       description : 'Enable building Cuarzo Core')
+
+option('with_ream',
+       type : 'boolean',
+       value : true,
+       description : 'Enable building Ream')
+
+option('with_srm',
+       type : 'boolean',
+       value : true,
+       description : 'Enable building SRM')
+
+option('with_louvre',
+       type : 'boolean',
+       value : true,
+       description : 'Enable building Louvre')
+
+option('with_kay',
+       type : 'boolean',
+       value : true,
+       description : 'Enable building Kay')
+
+option('with_marco',
+       type : 'boolean',
+       value : true,
+       description : 'Enable building Marco')
+
+option('with_xdgkit',
+       type : 'boolean',
+       value : true,
+       description : 'Enable building XDGKit')
+
+option('with_crystals',
+       type : 'boolean',
+       value : true,
+       description : 'Enable building Crystals')
