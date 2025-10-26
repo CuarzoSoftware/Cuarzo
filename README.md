@@ -18,7 +18,7 @@ This repository serves as a centralized place for building the Cuarzo framework,
 ```bash
 $ git clone --recurse-submodules https://github.com/CuarzoSoftware/Cuarzo.git
 $ cd Cuarzo
-$ meson setup builddir -Dbuildtype=release
+$ meson setup builddir -Dbuildtype=release --wrap-mode=forcefallback
 $ cd builddir
 $ meson compile -j $(nproc)
 $ meson install
