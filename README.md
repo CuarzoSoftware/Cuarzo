@@ -15,6 +15,8 @@ This repository serves as a centralized place for building the Cuarzo framework,
 
 ### Build
 
+Compile and install [Yoga 3.2.1](https://github.com/facebook/yoga/releases/tag/v3.2.1) and then:
+
 ```bash
 $ git clone --recurse-submodules https://github.com/CuarzoSoftware/Cuarzo.git
 $ cd Cuarzo
