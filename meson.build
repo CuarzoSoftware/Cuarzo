@@ -11,12 +11,13 @@ project(
 
 crystals_op     = get_option('with_crystals')
 marco_op        = get_option('with_marco')
+heaven_op       = get_option('with_heaven')
 kay_op          = get_option('with_kay') or marco_op
 xdgkit_op       = get_option('with_xdgkit') or marco_op
 louvre_op       = get_option('with_louvre') or crystals_op
 srm_op          = get_option('with_srm') or louvre_op
 ream_op         = get_option('with_ream') or srm_op or kay_op
-core_op         = get_option('with_core') or ream_op or xdgkit_op
+core_op         = get_option('with_core') or ream_op or xdgkit_op or heaven_op
 skia_op         = get_option('with_skia') or core_op
 
 if skia_op
@@ -25,6 +26,10 @@ endif
 
 if core_op
     cz_core_proj     = subproject('cz-core')
+endif
+
+if heaven_op
+    cz_heaven_proj   = subproject('cz-heaven')
 endif
 
 if xdgkit_op

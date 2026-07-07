@@ -42,3 +42,8 @@ option('with_crystals',
        type : 'boolean',
        value : true,
        description : 'Enable building Crystals')
+
+option('with_heaven',
+       type : 'boolean',
+       value : true,
+       description : 'Enable building Heaven')

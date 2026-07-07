@@ -25,3 +25,6 @@
 [submodule "subprojects/cz-louvre"]
 	path = subprojects/cz-louvre
 	url = https://github.com/CuarzoSoftware/Louvre.git
+[submodule "subprojects/cz-heaven"]
+	path = subprojects/cz-heaven
+	url = https://github.com/CuarzoSoftware/Heaven.git
