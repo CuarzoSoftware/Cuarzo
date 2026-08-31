@@ -28,3 +28,6 @@
 [submodule "subprojects/cz-heaven"]
 	path = subprojects/cz-heaven
 	url = https://github.com/CuarzoSoftware/Heaven.git
+[submodule "subprojects/cz-firmament"]
+	path = subprojects/cz-firmament
+	url = https://github.com/CuarzoSoftware/Firmament.git

@@ -47,3 +47,8 @@ option('with_heaven',
        type : 'boolean',
        value : true,
        description : 'Enable building Heaven')
+
+option('with_firmament',
+       type : 'boolean',
+       value : true,
+       description : 'Enable building Firmament')
