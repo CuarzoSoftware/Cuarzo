@@ -11,7 +11,8 @@ project(
 
 crystals_op     = get_option('with_crystals')
 firmament_op    = get_option('with_firmament')
-marco_op        = get_option('with_marco') or firmament_op
+shelf_op        = get_option('with_shelf')
+marco_op        = get_option('with_marco') or firmament_op or shelf_op
 heaven_op       = get_option('with_heaven') or firmament_op
 kay_op          = get_option('with_kay') or marco_op
 xdgkit_op       = get_option('with_xdgkit') or marco_op
@@ -63,4 +64,8 @@ endif
 
 if firmament_op
     cz_firmament_proj = subproject('cz-firmament')
+endif
+
+if shelf_op
+    cz_shelf_proj    = subproject('cz-shelf')
 endif

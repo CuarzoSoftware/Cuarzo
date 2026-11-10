@@ -31,3 +31,6 @@
 [submodule "subprojects/cz-firmament"]
 	path = subprojects/cz-firmament
 	url = https://github.com/CuarzoSoftware/Firmament.git
+[submodule "subprojects/cz-shelf"]
+	path = subprojects/cz-shelf
+	url = https://github.com/CuarzoSoftware/Shelf.git
