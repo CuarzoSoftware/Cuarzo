@@ -62,3 +62,8 @@ option('with_desk',
        type : 'boolean',
        value : true,
        description : 'Enable building Desk')
+
+option('with_qtcuarzo',
+       type : 'boolean',
+       value : true,
+       description : 'Enable building QtCuarzo (Qt platform theme plugin: global menus, theme)')

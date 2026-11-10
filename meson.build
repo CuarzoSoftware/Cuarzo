@@ -13,8 +13,9 @@ crystals_op     = get_option('with_crystals')
 firmament_op    = get_option('with_firmament')
 shelf_op        = get_option('with_shelf')
 desk_op         = get_option('with_desk')
+qtcuarzo_op     = get_option('with_qtcuarzo')
 marco_op        = get_option('with_marco') or firmament_op or shelf_op or desk_op
-heaven_op       = get_option('with_heaven') or firmament_op or desk_op
+heaven_op       = get_option('with_heaven') or firmament_op or desk_op or qtcuarzo_op
 kay_op          = get_option('with_kay') or marco_op
 xdgkit_op       = get_option('with_xdgkit') or marco_op
 louvre_op       = get_option('with_louvre') or crystals_op
@@ -73,4 +74,8 @@ endif
 
 if desk_op
     cz_desk_proj     = subproject('cz-desk')
+endif
+
+if qtcuarzo_op
+    cz_qtcuarzo_proj = subproject('cz-qtcuarzo')
 endif

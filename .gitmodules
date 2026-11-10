@@ -37,3 +37,6 @@
 [submodule "subprojects/cz-desk"]
 	path = subprojects/cz-desk
 	url = https://github.com/CuarzoSoftware/Desk.git
+[submodule "subprojects/cz-qtcuarzo"]
+	path = subprojects/cz-qtcuarzo
+	url = https://github.com/CuarzoSoftware/QtCuarzo.git
