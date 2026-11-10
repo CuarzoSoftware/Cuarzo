@@ -34,3 +34,6 @@
 [submodule "subprojects/cz-shelf"]
 	path = subprojects/cz-shelf
 	url = https://github.com/CuarzoSoftware/Shelf.git
+[submodule "subprojects/cz-desk"]
+	path = subprojects/cz-desk
+	url = https://github.com/CuarzoSoftware/Desk.git

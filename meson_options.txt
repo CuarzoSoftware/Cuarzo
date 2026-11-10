@@ -57,3 +57,8 @@ option('with_shelf',
        type : 'boolean',
        value : true,
        description : 'Enable building Shelf')
+
+option('with_desk',
+       type : 'boolean',
+       value : true,
+       description : 'Enable building Desk')
