@@ -40,3 +40,6 @@
 [submodule "subprojects/cz-qtcuarzo"]
 	path = subprojects/cz-qtcuarzo
 	url = https://github.com/CuarzoSoftware/QtCuarzo.git
+[submodule "subprojects/cz-portal"]
+	path = subprojects/cz-portal
+	url = https://github.com/CuarzoSoftware/xdg-desktop-portal-cz.git

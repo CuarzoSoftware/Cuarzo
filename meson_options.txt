@@ -67,3 +67,8 @@ option('with_qtcuarzo',
        type : 'boolean',
        value : true,
        description : 'Enable building QtCuarzo (Qt platform theme plugin: global menus, theme)')
+
+option('with_portal',
+       type : 'boolean',
+       value : true,
+       description : 'Enable building xdg-desktop-portal-cz (screen casting; needs PipeWire)')
