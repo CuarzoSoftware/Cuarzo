@@ -15,10 +15,11 @@ shelf_op        = get_option('with_shelf')
 desk_op         = get_option('with_desk')
 qtcuarzo_op     = get_option('with_qtcuarzo')
 portal_op       = get_option('with_portal')
-marco_op        = get_option('with_marco') or firmament_op or shelf_op or desk_op
+doorman_op      = get_option('with_doorman')
+marco_op        = get_option('with_marco') or firmament_op or shelf_op or desk_op or doorman_op
 heaven_op       = get_option('with_heaven') or firmament_op or desk_op or qtcuarzo_op
 kay_op          = get_option('with_kay') or marco_op
-xdgkit_op       = get_option('with_xdgkit') or marco_op
+xdgkit_op       = get_option('with_xdgkit') or marco_op or doorman_op
 louvre_op       = get_option('with_louvre') or crystals_op
 srm_op          = get_option('with_srm') or louvre_op
 ream_op         = get_option('with_ream') or srm_op or kay_op
@@ -83,4 +84,8 @@ endif
 
 if portal_op
     cz_portal_proj   = subproject('cz-portal')
+endif
+
+if doorman_op
+    cz_doorman_proj  = subproject('cz-doorman')
 endif

@@ -43,3 +43,6 @@
 [submodule "subprojects/cz-portal"]
 	path = subprojects/cz-portal
 	url = https://github.com/CuarzoSoftware/xdg-desktop-portal-cz.git
+[submodule "subprojects/cz-doorman"]
+	path = subprojects/cz-doorman
+	url = https://github.com/CuarzoSoftware/Doorman.git
