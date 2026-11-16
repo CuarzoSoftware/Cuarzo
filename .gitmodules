@@ -46,3 +46,6 @@
 [submodule "subprojects/cz-doorman"]
 	path = subprojects/cz-doorman
 	url = https://github.com/CuarzoSoftware/Doorman.git
+[submodule "subprojects/cz-asset-broker"]
+	path = subprojects/cz-asset-broker
+	url = https://github.com/CuarzoSoftware/AssetBroker.git

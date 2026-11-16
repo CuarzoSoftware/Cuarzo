@@ -77,3 +77,8 @@ option('with_doorman',
        type : 'boolean',
        value : true,
        description : 'Enable building Doorman (lock screen; needs PAM)')
+
+option('with_asset_broker',
+       type : 'boolean',
+       value : true,
+       description : 'Enable building AssetBroker (shared icon/asset loading library and cz-asset-broker service)')
