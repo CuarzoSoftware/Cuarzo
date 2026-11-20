@@ -13,9 +13,32 @@
 
 This repository serves as a centralized place for building the Cuarzo framework, ensuring version compatibility across its subprojects.
 
-### API Reference
+### Links
 
-[📖 cuarzosoftware.github.io/Cuarzo](https://cuarzosoftware.github.io/Cuarzo/): documentation of all the Cuarzo libraries (Core, Ream, SRM, Louvre, Kay, Marco, XDGKit, Heaven and AssetBroker), with each library as a module.
+- 📖 [C++ API Documentation](https://cuarzosoftware.github.io/Cuarzo/)
+- 🧩 [Modules](https://cuarzosoftware.github.io/Cuarzo/topics.html)
+- 🧭 [Guides](https://cuarzosoftware.github.io/Cuarzo/pages.html)
+- ⚙️ [Environment variables](https://cuarzosoftware.github.io/Cuarzo/environment_page.html)
+
+### Projects
+
+- 📚 [Skia](https://github.com/CuarzoSoftware/Skia) (library): Skia, built with Meson
+- 📚 [Core](https://github.com/CuarzoSoftware/Core) (library): event loop, objects, signals and utilities shared by every project
+- 📚 [Ream](https://github.com/CuarzoSoftware/Ream) (library): GPU buffers and rendering
+- 📚 [SRM](https://github.com/CuarzoSoftware/SRM) (library): DRM/KMS display output
+- 📚 [Louvre](https://github.com/CuarzoSoftware/Louvre) (library): Wayland compositors
+- 📚 [XDGKit](https://github.com/CuarzoSoftware/XDGKit) (library): XDG icon themes, desktop entries and MIME types
+- 📚 [AssetBroker](https://github.com/CuarzoSoftware/AssetBroker) (library and service): icons and images shared between apps
+- 📚 [Kay](https://github.com/CuarzoSoftware/Kay) (library): GUI toolkit
+- 📚 [Marco](https://github.com/CuarzoSoftware/Marco) (library): Wayland applications
+- 📚 [Heaven](https://github.com/CuarzoSoftware/Heaven) (library): global menus
+- 🚀 [Crystals](https://github.com/CuarzoSoftware/Crystals) (Wayland compositor)
+- 🚀 [Desk](https://github.com/CuarzoSoftware/Desk) (desktop background and icons)
+- 🚀 [Shelf](https://github.com/CuarzoSoftware/Shelf) (dock)
+- 🚀 [Firmament](https://github.com/CuarzoSoftware/Firmament) (global menu bar)
+- 🚀 [Doorman](https://github.com/CuarzoSoftware/Doorman) (lock screen)
+- 🚀 [xdg-desktop-portal-cz](https://github.com/CuarzoSoftware/xdg-desktop-portal-cz) (xdg-desktop-portal backend)
+- 🚀 [QtCuarzo](https://github.com/CuarzoSoftware/QtCuarzo) (Qt platform theme)
 
 ### Dependencies
 
@@ -70,7 +93,7 @@ $ sudo meson install
 
 ### Documentation
 
-To generate the [API Reference](#api-reference) locally (it requires [Doxygen](https://www.doxygen.nl) and Graphviz):
+To generate the [C++ API Documentation](#links) locally (it requires [Doxygen](https://www.doxygen.nl) and Graphviz):
 
 ```bash
 $ meson compile -C builddir docs   # Output in builddir/docs/html
