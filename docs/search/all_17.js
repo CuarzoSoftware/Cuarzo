@@ -1,0 +1,26 @@
+var searchData=
+[
+  ['xdg_20activation_20tokens_0',['Foreign Toplevel Controllers and XDG Activation Tokens',['../classCZ_1_1LToplevelRole.html#foreign-controller',1,'']]],
+  ['xdgactivationglobals_1',['xdgActivationGlobals',['../classCZ_1_1LClient.html#a8ba8c54f5f769799950eeca441599276',1,'CZ::LClient']]],
+  ['xdgdecorationmanager_2',['xdgDecorationManager',['../classCZ_1_1MApp.html#a5938965285fe770dd76fbbe458b06ef7',1,'CZ::MApp::Wayland']]],
+  ['xdgdecorationmanagerglobals_3',['xdgDecorationManagerGlobals',['../classCZ_1_1LClient.html#a1832b9d16c88b2c5f2c09a834e03f558',1,'CZ::LClient']]],
+  ['xdgdesktopentry_4',['XDGDesktopEntry',['../classCZ_1_1XDGDesktopEntry.html',1,'CZ']]],
+  ['xdgicon_5',['XDGIcon',['../classCZ_1_1XDGIcon.html',1,'CZ']]],
+  ['xdgicondirectory_6',['XDGIconDirectory',['../classCZ_1_1XDGIconDirectory.html',1,'CZ']]],
+  ['xdgicontheme_7',['XDGIconTheme',['../classCZ_1_1XDGIconTheme.html',1,'CZ']]],
+  ['xdgiconthememanager_8',['XDGIconThemeManager',['../classCZ_1_1XDGIconThemeManager.html',1,'CZ']]],
+  ['xdgini_9',['XDGINI',['../classCZ_1_1XDGINI.html',1,'CZ']]],
+  ['xdginiview_10',['XDGINIView',['../classCZ_1_1XDGINIView.html',1,'CZ']]],
+  ['xdgkit_11',['XDGKit',['../classCZ_1_1XDGKit.html',1,'XDGKit'],['../classCZ_1_1XDGKit.html#a11405e44bd3441c6ee56c1a410080359',1,'CZ::XDGKit::XDGKit()'],['../group__module__xdgkit.html',1,'XDGKit']]],
+  ['xdgkit_12',['xdgKit',['../classCZ_1_1ABCore.html#accfe56c3a07c3387fe4234ba8b16ff55',1,'CZ::ABCore']]],
+  ['xdgmap_13',['XDGMap',['../namespaceCZ.html#ab853a207346ff90a907b25cf8a7237aa',1,'CZ']]],
+  ['xdgmimedatabase_14',['XDGMimeDatabase',['../classCZ_1_1XDGMimeDatabase.html',1,'CZ']]],
+  ['xdgoutputmanagerglobals_15',['xdgOutputManagerGlobals',['../classCZ_1_1LClient.html#a0b3a78992801134b518020ee09037a94',1,'CZ::LClient']]],
+  ['xdgpopupresource_16',['xdgPopupResource',['../classCZ_1_1LPopupRole.html#a7d8b759b164533ae50fe5f7739dc72e1',1,'CZ::LPopupRole']]],
+  ['xdgsurfaceresource_17',['xdgSurfaceResource',['../classCZ_1_1LPopupRole.html#a17bb9ae083f6915a1014c9118fa26e3c',1,'CZ::LPopupRole::xdgSurfaceResource()'],['../classCZ_1_1LToplevelRole.html#aebd236893d882f9332311144488735d3',1,'CZ::LToplevelRole::xdgSurfaceResource() const']]],
+  ['xdgtoplevelresource_18',['xdgToplevelResource',['../classCZ_1_1LToplevelRole.html#a90ae616a9c21ca15db91b00b801aa98b',1,'CZ::LToplevelRole']]],
+  ['xdgtrash_19',['XDGTrash',['../classCZ_1_1XDGTrash.html',1,'CZ']]],
+  ['xdgwmbase_20',['xdgWmBase',['../classCZ_1_1MApp.html#ab28fd06654ee73d30800a8ce89d38bf5',1,'CZ::MApp::Wayland']]],
+  ['xdgwmbaseglobals_21',['xdgWmBaseGlobals',['../classCZ_1_1LClient.html#ae1aa69a7fbaca53332c59132dd2aeeb9',1,'CZ::LClient']]],
+  ['xpm_22',['XPM',['../classCZ_1_1XDGIcon.html#a52c718554d57e879e76719a4119ffb21a3d071f2a032231aa793ddb8060f1befb',1,'CZ::XDGIcon']]]
+];

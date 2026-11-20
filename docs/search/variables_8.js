@@ -1,0 +1,27 @@
+var searchData=
+[
+  ['icon_0',['icon',['../classCZ_1_1MMenuAction.html#a1d1801d14d0d6abd9498c4e66b9dab56',1,'CZ::MMenuAction::icon'],['../classCZ_1_1XDGDesktopEntry.html#aa101b5036fe941887517343150f4a9c0',1,'CZ::XDGDesktopEntry::icon']]],
+  ['icondarkscheme_1',['IconDarkScheme',['../classCZ_1_1AKTheme.html#ab14b533329dc293611f44fc58a4d7d95',1,'CZ::AKTheme']]],
+  ['iconfont_2',['iconFont',['../classCZ_1_1AKTheme.html#a5d8db0ecf57cc71635cf4dc7efc4b1b7',1,'CZ::AKTheme']]],
+  ['iconlightscheme_3',['IconLightScheme',['../classCZ_1_1AKTheme.html#a78b11205f34eb5da7e63f34f16423028',1,'CZ::AKTheme']]],
+  ['id_4',['id',['../classCZ_1_1CZTouchDownEvent.html#a9c3be391f8b1367991ffc7529a3e5bbe',1,'CZ::CZTouchDownEvent::id'],['../classCZ_1_1CZTouchMoveEvent.html#a9c3be391f8b1367991ffc7529a3e5bbe',1,'CZ::CZTouchMoveEvent::id'],['../classCZ_1_1CZTouchUpEvent.html#a9c3be391f8b1367991ffc7529a3e5bbe',1,'CZ::CZTouchUpEvent::id'],['../namespaceCZ.html#a8e313194e7fdf81e86c9f267a5625ec1',1,'CZ::RGLFramebufferInfo::id'],['../namespaceCZ.html#a8e313194e7fdf81e86c9f267a5625ec1',1,'CZ::RGLTexture::id'],['../classCZ_1_1XDGDesktopEntry.html#afd0d68c6d31ff249f3ae8662162663c3',1,'CZ::XDGDesktopEntry::id']]],
+  ['identifier_5',['identifier',['../classCZ_1_1MForeignToplevel.html#a48e60d765d82fd046fcd768268ce9dcc',1,'CZ::MForeignToplevel::Props']]],
+  ['image_6',['image',['../classCZ_1_1RGLProgram.html#a8af37e4bc73fa5b234623c002c36b6be',1,'CZ::RGLProgram::Locations::image'],['../namespaceCZ.html#ae8b455106e1b9b450947c46b086f4561',1,'CZ::RDrawImageInfo::image'],['../namespaceCZ.html#ae8b455106e1b9b450947c46b086f4561',1,'CZ::RSwapchainImage::image'],['../group__AKCore.html#ae8b455106e1b9b450947c46b086f4561',1,'CZ::AKAsset::RRect9Patch::image']]],
+  ['imagecopycapturemanager_7',['imageCopyCaptureManager',['../classCZ_1_1MApp.html#a0483da36c214579a945c20f6e1724f45',1,'CZ::MApp::Wayland']]],
+  ['imageproj_8',['imageProj',['../classCZ_1_1RGLProgram.html#ab2ee7ca21976b50ec50ef6f8ecab35e4',1,'CZ::RGLProgram::Locations']]],
+  ['inclip_9',['inClip',['../classCZ_1_1AKTarget.html#aeb8beba3d61e2b10699e2f651ff53926',1,'CZ::AKTarget']]],
+  ['indamage_10',['inDamage',['../classCZ_1_1AKTarget.html#a15a536a669e05678027501d22a7a30c1',1,'CZ::AKTarget']]],
+  ['index_11',['index',['../namespaceCZ.html#a9d57133bec333a3eac9e3c1693a5ee38',1,'CZ::RSwapchainImage']]],
+  ['info_12',['info',['../classCZ_1_1CZPresentationEvent.html#a2c2216d041e5631357b5bc3f0e1683e8',1,'CZ::CZPresentationEvent']]],
+  ['initialized_13',['initialized',['../namespaceCZ.html#a8c5606b41c0a506815b1d796094be1a9',1,'CZ::SRMConnectorInterface::initialized'],['../classCZ_1_1LSeat.html#aedeffc7d23da25d52b9a50045189fe2b',1,'CZ::LSeat::OutputConfiguration::initialized']]],
+  ['internalformat_14',['internalFormat',['../structCZ_1_1RGLFormat.html#adc4d55406a0b1ad45d1501974a7b74e1',1,'CZ::RGLFormat']]],
+  ['ints_15',['ints',['../structCZ_1_1ABGenKey.html#a99e26a6ead0aef985ac8d1d68db636c1',1,'CZ::ABGenKey']]],
+  ['invisibleregion_16',['invisibleRegion',['../classCZ_1_1AKRenderable.html#a217aee56456dbad19e0e5cc466fc6d77',1,'CZ::AKRenderable']]],
+  ['invisibleregionmanager_17',['invisibleRegionManager',['../classCZ_1_1MApp.html#a4d37225416e30a7aa91b4436b140f07e',1,'CZ::MApp::Wayland']]],
+  ['iscurrent_18',['isCurrent',['../classCZ_1_1MScreen.html#a381a2cba084fbd6eab73d1bed303e577',1,'CZ::MScreen::Mode']]],
+  ['isempty_19',['isEmpty',['../classCZ_1_1LBackgroundBlur.html#aeb28f9dd752ad474039dd78a3ea761b9',1,'CZ::LBackgroundBlur::Props']]],
+  ['isfullsize_20',['isFullSize',['../classCZ_1_1LBackgroundBlur.html#a56db58cbd623ff3cffe8c789e596f591',1,'CZ::LBackgroundBlur::Props']]],
+  ['ispreferred_21',['isPreferred',['../classCZ_1_1MScreen.html#a47d42072552e014c53a98ee45c7049f5',1,'CZ::MScreen::Mode']]],
+  ['ispressed_22',['isPressed',['../classCZ_1_1CZKeyboardKeyEvent.html#ab1351de5234bac2d378240bdfac6e90c',1,'CZ::CZKeyboardKeyEvent']]],
+  ['isrepeat_23',['isRepeat',['../classCZ_1_1CZKeyboardKeyEvent.html#aef096c3bbf6e750546c1c2a1da7992e5',1,'CZ::CZKeyboardKeyEvent']]]
+];
