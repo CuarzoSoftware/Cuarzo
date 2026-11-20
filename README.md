@@ -13,6 +13,10 @@
 
 This repository serves as a centralized place for building the Cuarzo framework, ensuring version compatibility across its subprojects.
 
+### API Reference
+
+[📖 cuarzosoftware.github.io/Cuarzo](https://cuarzosoftware.github.io/Cuarzo/): documentation of all the Cuarzo libraries (Core, Ream, SRM, Louvre, Kay, Marco, XDGKit, Heaven and AssetBroker), with each library as a module.
+
 ### Dependencies
 
 #### Fedora
@@ -63,6 +67,16 @@ $ cd builddir
 $ meson compile -j $(nproc)
 $ sudo meson install
 ```
+
+### Documentation
+
+To generate the [API Reference](#api-reference) locally (it requires [Doxygen](https://www.doxygen.nl) and Graphviz):
+
+```bash
+$ meson compile -C builddir docs   # Output in builddir/docs/html
+```
+
+Or without a build directory: `doxygen/gen-docs.sh` (output in `docs/html`).
 
 ### Recommended
 

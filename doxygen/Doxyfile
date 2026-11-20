@@ -1,0 +1,195 @@
+# Doxygen configuration for the Cuarzo Framework documentation.
+#
+# One site for every library subproject; each library is a module (a doxygen
+# group defined in pages/modules.dox). Headers are assigned to their module by
+# module-filter.py, so the subprojects' headers don't need to know about it.
+#
+# Generate with ./gen-docs.sh (or `meson compile docs` from a build dir).
+# Only options that differ from doxygen's defaults are listed here.
+
+#---------------------------------------------------------------------------
+# Project
+#---------------------------------------------------------------------------
+
+PROJECT_NAME           = "Cuarzo"
+PROJECT_NUMBER         = $(CZ_DOCS_VERSION)
+PROJECT_BRIEF          = "The Cuarzo Framework"
+PROJECT_LOGO           = img/CuarzoLogo.png
+OUTPUT_DIRECTORY       = $(CZ_DOCS_OUTPUT)
+HTML_OUTPUT            = html
+GENERATE_LATEX         = NO
+
+#---------------------------------------------------------------------------
+# Parsing
+#---------------------------------------------------------------------------
+
+# Headers are documented with Qt/Javadoc style comments
+JAVADOC_AUTOBRIEF      = NO
+QT_AUTOBRIEF           = NO
+MARKDOWN_SUPPORT       = YES
+TOC_INCLUDE_HEADINGS   = 0
+AUTOLINK_SUPPORT       = YES
+BUILTIN_STL_SUPPORT    = YES
+DISTRIBUTE_GROUP_DOC   = YES
+GROUP_NESTED_COMPOUNDS = NO
+INLINE_SIMPLE_STRUCTS  = YES
+LOOKUP_CACHE_SIZE      = 2
+NUM_PROC_THREADS       = 0
+
+#---------------------------------------------------------------------------
+# What to show
+#---------------------------------------------------------------------------
+
+EXTRACT_ALL            = NO
+EXTRACT_PRIVATE        = NO
+EXTRACT_STATIC         = YES
+EXTRACT_LOCAL_CLASSES  = YES
+HIDE_UNDOC_MEMBERS     = YES
+HIDE_UNDOC_CLASSES     = YES
+HIDE_UNDOC_NAMESPACES  = YES
+HIDE_FRIEND_COMPOUNDS  = YES
+HIDE_IN_BODY_DOCS      = YES
+INTERNAL_DOCS          = NO
+
+# Every public class lives in the CZ namespace: show "LSurface", not "CZ::LSurface"
+HIDE_SCOPE_NAMES       = YES
+HIDE_COMPOUND_REFERENCE= NO
+
+# Qt-like "#include <CZ/Louvre/LSurface.h>" line on each class page
+SHOW_HEADERFILE        = YES
+SHOW_INCLUDE_FILES     = NO
+FULL_PATH_NAMES        = YES
+STRIP_FROM_PATH        = ../subprojects
+STRIP_FROM_INC_PATH    = ../subprojects/cz-core/src \
+                         ../subprojects/cz-ream/src \
+                         ../subprojects/cz-srm/src \
+                         ../subprojects/cz-louvre/src \
+                         ../subprojects/cz-kay/src \
+                         ../subprojects/cz-marco/src \
+                         ../subprojects/cz-xdgkit/src \
+                         ../subprojects/cz-heaven/src \
+                         ../subprojects/cz-asset-broker/src
+
+INLINE_INFO            = YES
+SORT_MEMBER_DOCS       = NO
+SORT_BRIEF_DOCS        = NO
+SORT_GROUP_NAMES       = NO
+SHOW_USED_FILES        = NO
+SHOW_FILES             = NO
+SHOW_NAMESPACES        = NO
+LAYOUT_FILE            = Layout.xml
+
+#---------------------------------------------------------------------------
+# Warnings
+#---------------------------------------------------------------------------
+
+QUIET                  = YES
+WARNINGS               = YES
+WARN_IF_UNDOCUMENTED   = NO
+WARN_IF_DOC_ERROR      = YES
+WARN_IF_INCOMPLETE_DOC = NO
+WARN_NO_PARAMDOC       = NO
+WARN_LOGFILE           = $(CZ_DOCS_OUTPUT)/warnings.log
+
+#---------------------------------------------------------------------------
+# Input
+#---------------------------------------------------------------------------
+
+# Module order here is the order of the module list (see pages/modules.dox)
+INPUT                  = pages \
+                         ../subprojects/cz-core/src/CZ \
+                         ../subprojects/cz-ream/src/CZ/Ream \
+                         ../subprojects/cz-srm/src/CZ/SRM \
+                         ../subprojects/cz-louvre/src/CZ/Louvre \
+                         ../subprojects/cz-kay/src/CZ/AK \
+                         ../subprojects/cz-marco/src/CZ/Marco \
+                         ../subprojects/cz-xdgkit/src/CZ/XDG \
+                         ../subprojects/cz-heaven/src/CZ/Heaven \
+                         ../subprojects/cz-asset-broker/src/CZ/AssetBroker \
+                         ../subprojects/cz-kay/doxygen/md/doc \
+                         ../subprojects/cz-ream/doxygen/md/Abstraction.md
+
+FILE_PATTERNS          = *.h \
+                         *.md \
+                         *.dox
+RECURSIVE              = YES
+
+# Implementation details, backends, wayland-scanner output (lowercase file names)
+# and Marco's low-level Wayland proxies
+EXCLUDE                = ../subprojects/cz-heaven/src/CZ/Heaven/Bar/HNEvent.h
+EXCLUDE_PATTERNS       = */Private/* \
+                         */Backends/* \
+                         */tests/* \
+                         */examples/* \
+                         */Protocols/*/[a-z]*.h \
+                         */Marco/Protocols/*
+
+# Puts each header in its library's module group
+FILTER_PATTERNS        = *.h="python3 module-filter.py"
+
+# @snippet sources (Louvre's default implementations)
+EXAMPLE_PATH           = ../subprojects/cz-louvre/src/CZ/default \
+                         ../subprojects/cz-louvre/src/CZ/Louvre \
+                         ../subprojects/cz-louvre/src/CZ/Louvre/Roles \
+                         ../subprojects/cz-louvre/src/CZ/Louvre/Seat
+EXAMPLE_RECURSIVE      = NO
+
+IMAGE_PATH             = img \
+                         ../subprojects/cz-louvre/doxygen/img \
+                         ../subprojects/cz-kay/doxygen/img \
+                         ../subprojects/cz-ream/doxygen/img
+
+USE_MDFILE_AS_MAINPAGE = pages/MainPage.md
+
+#---------------------------------------------------------------------------
+# Preprocessor
+#---------------------------------------------------------------------------
+
+ENABLE_PREPROCESSING   = YES
+MACRO_EXPANSION        = YES
+EXPAND_ONLY_PREDEF     = YES
+SEARCH_INCLUDES        = NO
+PREDEFINED             = DOXYGEN \
+                         "CZ_DISABLE_COPY(x)=" \
+                         "CZ_UNUSED="
+
+#---------------------------------------------------------------------------
+# HTML
+#---------------------------------------------------------------------------
+
+GENERATE_HTML          = YES
+HTML_FOOTER            = footer.html
+HTML_EXTRA_STYLESHEET  = css/doxygen-awesome.css \
+                         css/cuarzo.css
+HTML_EXTRA_FILES       = js/cuarzo.js
+HTML_COLORSTYLE        = AUTO_LIGHT
+HTML_DYNAMIC_SECTIONS  = YES
+HTML_CODE_FOLDING      = NO
+HTML_COPY_CLIPBOARD    = YES
+HTML_INDEX_NUM_ENTRIES = 1
+DISABLE_INDEX          = NO
+GENERATE_TREEVIEW      = YES
+FULL_SIDEBAR           = NO
+TREEVIEW_WIDTH         = 260
+ENUM_VALUES_PER_LINE   = 20
+SEARCHENGINE           = YES
+SERVER_BASED_SEARCH    = NO
+
+#---------------------------------------------------------------------------
+# Diagrams (only the dependency graph on the main page)
+#---------------------------------------------------------------------------
+
+HAVE_DOT               = YES
+DOT_IMAGE_FORMAT       = svg
+INTERACTIVE_SVG        = NO
+DOT_COMMON_ATTR        = "fontname=Helvetica,fontsize=10"
+DOT_EDGE_ATTR          = "labelfontname=Helvetica,labelfontsize=10"
+CLASS_GRAPH            = TEXT
+COLLABORATION_GRAPH    = NO
+GROUP_GRAPHS           = NO
+INCLUDE_GRAPH          = NO
+INCLUDED_BY_GRAPH      = NO
+CALL_GRAPH             = NO
+CALLER_GRAPH           = NO
+GRAPHICAL_HIERARCHY    = NO
+DIRECTORY_GRAPH        = NO

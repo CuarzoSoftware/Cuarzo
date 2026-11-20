@@ -1,0 +1,74 @@
+name: Build docs
+
+# Run by hand from the Actions tab. Generates the Cuarzo Framework
+# documentation (doxygen/) and force-pushes it to the `docs` branch, in the
+# `docs/` folder. GitHub Pages serves it from there:
+# Settings > Pages > Deploy from a branch > `docs` / `/docs`.
+
+on: [workflow_dispatch]
+
+permissions:
+  contents: write
+
+env:
+  # The doxygen version the configuration is written for (Ubuntu's is older)
+  DOXYGEN_VERSION: 1.13.2
+
+jobs:
+  build:
+    name: Create docs
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Only the libraries in the documentation, at the commits this repo pins
+      - name: Checkout libraries
+        run: |
+          git submodule update --init --depth 1 \
+            subprojects/cz-core \
+            subprojects/cz-ream \
+            subprojects/cz-srm \
+            subprojects/cz-louvre \
+            subprojects/cz-kay \
+            subprojects/cz-marco \
+            subprojects/cz-xdgkit \
+            subprojects/cz-heaven \
+            subprojects/cz-asset-broker
+
+      - name: Install doxygen and graphviz
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y graphviz
+          V=${DOXYGEN_VERSION//./_}
+          curl -sSL -o "$RUNNER_TEMP/doxygen.tar.gz" \
+            "https://github.com/doxygen/doxygen/releases/download/Release_$V/doxygen-$DOXYGEN_VERSION.linux.bin.tar.gz"
+          tar -xzf "$RUNNER_TEMP/doxygen.tar.gz" -C "$RUNNER_TEMP"
+          echo "$RUNNER_TEMP/doxygen-$DOXYGEN_VERSION/bin" >> "$GITHUB_PATH"
+
+      - name: Run doxygen
+        run: |
+          doxygen --version
+          doxygen/gen-docs.sh "$RUNNER_TEMP/docs"
+          if [ -s "$RUNNER_TEMP/docs/warnings.log" ]; then
+            echo "::warning::Doxygen warnings (see the log below)"
+            cat "$RUNNER_TEMP/docs/warnings.log"
+          fi
+
+      - name: Upload docs
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898299+github-actions[bot]@users.noreply.github.com"
+
+          # Fresh branch with only the generated site, in docs/
+          git checkout --orphan docs
+          git rm -rq --cached .
+          git clean -fdxq
+          rm -rf subprojects .gitmodules
+
+          cp -r "$RUNNER_TEMP/docs/html" docs
+          touch docs/.nojekyll
+
+          git add docs
+          git commit -q -m "Doxygen ($(git rev-parse --short "$GITHUB_SHA"))"
+          git push -f origin docs

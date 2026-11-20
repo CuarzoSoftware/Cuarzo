@@ -94,3 +94,11 @@ endif
 if doorman_op
     cz_doorman_proj  = subproject('cz-doorman')
 endif
+
+# Documentation of every library (one site, each library a module): `meson compile docs`
+doxygen = find_program('doxygen', required: false)
+
+if doxygen.found()
+    run_target('docs',
+        command: [files('doxygen/gen-docs.sh'), meson.current_build_dir() / 'docs'])
+endif

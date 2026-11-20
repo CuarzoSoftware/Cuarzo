@@ -1,0 +1,257 @@
+/**
+ * @file modules.dox
+ *
+ * Module groups of the Cuarzo Framework. Each library subproject is one
+ * module; module-filter.py places the headers of subprojects/cz-<name> in
+ * their module. The order of the groups here is the order of the module list.
+ */
+
+/**
+@defgroup module_core Core
+@brief Core classes and utilities shared by every Cuarzo library: objects, signals, events, timers, animations and logging.
+
+<table class="cz-module-info">
+<tr><th>Header</th><td><tt>\#include <CZ/Core/CZCore.h></tt></td></tr>
+<tr><th>pkg-config</th><td><tt>cz-core</tt></td></tr>
+<tr><th>Meson</th><td><tt>dependency('cz-core')</tt></td></tr>
+<tr><th>Depends on</th><td>Skia</td></tr>
+</table>
+
+Core is the foundation of the framework. It provides the main event loop (@ref CZ::CZCore "CZCore"), the
+object model every other library builds on (@ref CZ::CZObject "CZObject", @ref CZ::CZSignal "CZSignal", @ref CZ::CZWeak "CZWeak", CZOwn),
+the input and window events delivered to applications and compositors, timers, animations and
+the logger.
+
+<h2 id="module_core_overview">Main Classes</h2>
+
+- **Event loop**: @ref CZ::CZCore "CZCore" drives timers, file descriptor event sources (@ref CZ::CZEventSource "CZEventSource") and
+  queued events. Applications create it once with `CZCore::GetOrMake()`.
+- **Objects and signals**: @ref CZ::CZObject "CZObject", @ref CZ::CZSignal "CZSignal" and @ref CZ::CZListener "CZListener" for callbacks;
+  @ref CZ::CZWeak "CZWeak" references that become `nullptr` when their object is destroyed.
+- **Events**: input (pointer, keyboard, touch and gesture events), layout, window state,
+  color scheme and presentation events, all deriving from @ref CZ::CZEvent "CZEvent".
+- **Animations**: @ref CZ::CZAnimation "CZAnimation", @ref CZ::CZLinearAnimation "CZLinearAnimation" and @ref CZ::CZSpringAnimation "CZSpringAnimation".
+- **Utilities**: CZTransform, @ref CZ::CZRRect "CZRRect", @ref CZ::CZBitset "CZBitset", @ref CZ::CZSpFd "CZSpFd", shared memory,
+  string, math and region helpers.
+*/
+
+/**
+@defgroup module_ream Ream
+@brief Graphics library for Linux: GPU buffer allocation, DMA-buf sharing between devices and a portable painter.
+
+<table class="cz-module-info">
+<tr><th>Header</th><td><tt>\#include <CZ/Ream/RCore.h></tt></td></tr>
+<tr><th>pkg-config</th><td><tt>cz-ream</tt></td></tr>
+<tr><th>Meson</th><td><tt>dependency('cz-ream')</tt></td></tr>
+<tr><th>Depends on</th><td>@ref module_core, Skia</td></tr>
+</table>
+
+Ream abstracts the platform (DRM, Wayland, offscreen) and the graphics API (OpenGL ES 2.0,
+Vulkan, raster) behind one API. It allocates GPU buffers (native, GBM/DMA-buf or dumb buffers),
+shares them across devices on hybrid GPU systems, synchronizes them with explicit `sync_file`
+fences and draws into them with a built-in painter or with Skia.
+
+<h2 id="module_ream_overview">Main Classes</h2>
+
+- @ref CZ::RCore "RCore" initializes Ream for a platform and graphics API; get it anywhere with `RCore::Get()`.
+- @ref CZ::RDevice "RDevice" represents a GPU. @ref CZ::RImage "RImage" is an image that can be shared across devices,
+  @ref CZ::RSurface "RSurface" wraps an image to draw into, and @ref CZ::RPainter "RPainter" draws into it.
+- Portable code uses the classes directly under `CZ/Ream`; API-specific implementations live
+  in `CZ/Ream/GL`, `CZ/Ream/VK` and `CZ/Ream/RS` (reached with e.g. `image->asGL()`).
+
+See @ref abstraction_page for how the platform and API abstraction works.
+*/
+
+/**
+@defgroup module_srm SRM
+@brief Simple Rendering Manager: DRM/KMS display output with multi-GPU support.
+
+<table class="cz-module-info">
+<tr><th>Header</th><td><tt>\#include <CZ/SRM/SRMCore.h></tt></td></tr>
+<tr><th>pkg-config</th><td><tt>cz-srm</tt></td></tr>
+<tr><th>Meson</th><td><tt>dependency('cz-srm')</tt></td></tr>
+<tr><th>Depends on</th><td>@ref module_core, @ref module_ream</td></tr>
+</table>
+
+SRM finds the DRM devices and connectors of the system, picks the best GPU to render each
+connector, and handles mode setting, page flipping, cursor planes, direct scanout, gamma and
+DRM leases. You render each connector's frames with Ream from the callbacks of a
+SRMConnectorInterface.
+
+<h2 id="module_srm_overview">Main Classes</h2>
+
+- @ref CZ::SRMCore "SRMCore" enumerates @ref CZ::SRMDevice "SRMDevice" objects (GPUs), each with its connectors, CRTCs, encoders
+  and planes.
+- @ref CZ::SRMConnector "SRMConnector" is a display output; `initialize()` starts its rendering thread and calls
+  your SRMConnectorInterface to draw each frame.
+- @ref CZ::SRMLease "SRMLease" leases connectors to other clients (e.g. VR headsets).
+*/
+
+/**
+@defgroup module_louvre Louvre
+@brief Library for building Wayland compositors.
+
+<table class="cz-module-info">
+<tr><th>Header</th><td><tt>\#include <CZ/Louvre/LCompositor.h></tt></td></tr>
+<tr><th>pkg-config</th><td><tt>cz-louvre</tt></td></tr>
+<tr><th>Meson</th><td><tt>dependency('cz-louvre')</tt></td></tr>
+<tr><th>Depends on</th><td>@ref module_core, @ref module_ream, @ref module_srm, Skia</td></tr>
+</table>
+
+Louvre uses the factory method pattern to provide default implementations for all major
+functionality and protocols, which you override gradually: a compositor works from day one and
+you customize it class by class. It handles the DRM and Wayland backends, input through
+libinput, buffer management, explicit synchronization, fractional scaling, multi-GPU setups and
+around forty Wayland protocols.
+
+<h2 id="module_louvre_overview">Main Classes</h2>
+
+- @ref CZ::LCompositor "LCompositor" is the entry point; override its `createObjectRequest()` to return your own
+  subclasses of the factory objects (@ref CZ::LFactoryObject "LFactoryObject").
+- @ref CZ::LSurface "LSurface", @ref CZ::LToplevelRole "LToplevelRole", @ref CZ::LPopupRole "LPopupRole", @ref CZ::LLayerRole "LLayerRole" and the other roles
+  represent client windows.
+- @ref CZ::LOutput "LOutput" is a display, @ref CZ::LSeat "LSeat" with @ref CZ::LPointer "LPointer", @ref CZ::LKeyboard "LKeyboard" and @ref CZ::LTouch "LTouch" handles
+  input, and @ref CZ::LClient "LClient" is a connected client.
+*/
+
+/**
+@defgroup module_kay Kay
+@brief GPU-accelerated GUI toolkit: a scene of nodes laid out with Yoga and drawn with Skia or Ream.
+
+<table class="cz-module-info">
+<tr><th>Header</th><td><tt>\#include <CZ/AK/AKScene.h></tt></td></tr>
+<tr><th>pkg-config</th><td><tt>cz-kay</tt></td></tr>
+<tr><th>Meson</th><td><tt>dependency('cz-kay')</tt></td></tr>
+<tr><th>Depends on</th><td>@ref module_core, @ref module_ream, @ref module_asset_broker, Skia, Yoga</td></tr>
+</table>
+
+Kay builds user interfaces from trees of nodes. Scenes track damage so only changed regions
+are drawn again, support fractional scaling and screen transforms, and can be embedded in
+Wayland clients (through @ref module_marco) or in compositors.
+
+<h2 id="module_kay_overview">Main Classes</h2>
+
+- @ref CZ::AKScene "AKScene" is a node tree; @ref CZ::AKTarget "AKTarget" defines how and where it's drawn.
+- @ref CZ::AKNode "AKNode" is the base of every node: @ref CZ::AKContainer "AKContainer" only lays out its children,
+  @ref CZ::AKRenderable "AKRenderable" draws directly, @ref CZ::AKBakeable "AKBakeable" draws into a cached image and @ref CZ::AKSubScene "AKSubScene"
+  renders its children into its own image.
+- Ready to use components (buttons, text fields, scroll views, images...) and background effects
+  such as shadows and blur.
+
+Guides: @ref core_components_page, @ref creating_components_page and @ref events_page.
+*/
+
+/**
+@defgroup module_marco Marco
+@brief Library for building Wayland applications with Kay.
+
+<table class="cz-module-info">
+<tr><th>Header</th><td><tt>\#include <CZ/Marco/MApp.h></tt></td></tr>
+<tr><th>pkg-config</th><td><tt>cz-marco</tt></td></tr>
+<tr><th>Meson</th><td><tt>dependency('cz-marco')</tt></td></tr>
+<tr><th>Depends on</th><td>@ref module_core, @ref module_ream, @ref module_kay, @ref module_xdgkit, Skia</td></tr>
+</table>
+
+Marco connects to the Wayland compositor, creates the Ream context and gives each surface a Kay
+scene, so windows, popups and panels are built with Kay nodes.
+
+<h2 id="module_marco_overview">Main Classes</h2>
+
+- @ref CZ::MApp "MApp" is the application; @ref CZ::MScreen "MScreen" represents an output.
+- Surface roles: @ref CZ::MToplevel "MToplevel" (windows), @ref CZ::MPopup "MPopup" and @ref CZ::MMenu "MMenu", @ref CZ::MTooltip "MTooltip",
+  @ref CZ::MSubsurface "MSubsurface", @ref CZ::MLayerSurface "MLayerSurface" (`wlr_layer_shell` panels and backgrounds) and
+  @ref CZ::MSessionLockSurface "MSessionLockSurface".
+- Extensions for desktop components: foreign toplevel management and session locking.
+*/
+
+/**
+@defgroup module_xdgkit XDGKit
+@brief Utilities for the XDG specifications: icon themes, desktop entries, MIME types and the trash.
+
+<table class="cz-module-info">
+<tr><th>Header</th><td><tt>\#include <CZ/XDG/XDGKit.h></tt></td></tr>
+<tr><th>pkg-config</th><td><tt>cz-xdgkit</tt></td></tr>
+<tr><th>Meson</th><td><tt>dependency('cz-xdgkit')</tt></td></tr>
+<tr><th>Depends on</th><td>@ref module_core</td></tr>
+</table>
+
+@ref CZ::XDGKit "XDGKit" finds icons following the
+[XDG Icon Theme Specification](https://specifications.freedesktop.org/icon-theme-spec/latest/),
+using caches generated by `cz-xdgkit-icon-theme-indexer` for fast lookups. It doesn't load
+icons: it returns their paths, sizes and formats. It also reads desktop entries, the MIME
+database and the trash.
+
+<h2 id="module_xdgkit_overview">Main Classes</h2>
+
+- @ref CZ::XDGKit "XDGKit" is the entry point; @ref CZ::XDGIconThemeManager "XDGIconThemeManager" finds a @ref CZ::XDGIcon "XDGIcon" by name, size,
+  scale and theme.
+- @ref CZ::XDGDesktopEntry "XDGDesktopEntry", @ref CZ::XDGMimeDatabase "XDGMimeDatabase" and @ref CZ::XDGTrash "XDGTrash".
+- Helper functions in the @ref CZ::XDGUtils "XDGUtils" namespace.
+*/
+
+/**
+@defgroup module_heaven Heaven
+@brief Global menus for Wayland sessions over D-Bus.
+
+<table class="cz-module-info">
+<tr><th>Headers</th><td><tt>\#include <CZ/Heaven/Bar/HNBar.h></tt><br><tt>\#include <CZ/Heaven/Client/HNClient.h></tt><br><tt>\#include <CZ/Heaven/Compositor/HNCompositor.h></tt></td></tr>
+<tr><th>pkg-config</th><td><tt>cz-heaven-bar</tt>, <tt>cz-heaven-client</tt>, <tt>cz-heaven-compositor</tt></td></tr>
+<tr><th>Meson</th><td><tt>dependency('cz-heaven-client')</tt> (etc.)</td></tr>
+<tr><th>Depends on</th><td>@ref module_core</td></tr>
+</table>
+
+Heaven lets Wayland clients export their application menus to a single global menu application
+(the bar), and lets the compositor decide whose menu is shown. The objects and their properties
+are mirrored on both ends over the D-Bus session bus.
+
+Heaven is three independent libraries, one for each side:
+
+| Library | Used by | Role |
+|---|---|---|
+| @ref module_heaven_bar | The global menu application | Receives and mirrors the menus of every client; delivers clicks back. |
+| @ref module_heaven_client | Applications | Publishes the app's menu tree and reacts to clicks. |
+| @ref module_heaven_compositor | The compositor | Authenticates clients and tells the bar which one is active. |
+*/
+
+/**
+@defgroup module_heaven_bar Heaven Bar
+@ingroup module_heaven
+@brief `cz-heaven-bar`: the global menu application's side (namespace `Bar`).
+*/
+
+/**
+@defgroup module_heaven_client Heaven Client
+@ingroup module_heaven
+@brief `cz-heaven-client`: the application's side (namespace `Client`).
+*/
+
+/**
+@defgroup module_heaven_compositor Heaven Compositor
+@ingroup module_heaven
+@brief `cz-heaven-compositor`: the compositor's side (namespace `Compositor`).
+*/
+
+/**
+@defgroup module_asset_broker AssetBroker
+@brief Icon and image loading shared between apps as DMA-bufs.
+
+<table class="cz-module-info">
+<tr><th>Header</th><td><tt>\#include <CZ/AssetBroker/ABCore.h></tt></td></tr>
+<tr><th>pkg-config</th><td><tt>cz-asset-broker</tt></td></tr>
+<tr><th>Meson</th><td><tt>dependency('cz-asset-broker')</tt></td></tr>
+<tr><th>Depends on</th><td>@ref module_core, @ref module_ream, @ref module_xdgkit</td></tr>
+</table>
+
+Assets (icons, SVGs and images) are either generated in each app or, when the `cz-asset-broker`
+service is running, generated once by the service and shared with every app as DMA-bufs, so apps
+use the same GPU buffers. Requesting the same icon, size and device again returns the same
+@ref CZ::RImage "RImage" while some copy of it is alive.
+
+<h2 id="module_asset_broker_overview">Main Classes</h2>
+
+- @ref CZ::ABCore "ABCore" loads icons (described by a @ref CZ::ABIconKey "ABIconKey") and images, in-process or through the
+  service depending on its mode (`ABMode::Auto`, `Local` or `Remote`).
+- `ABCore::IconProvider()` plugs icons into Kay's image nodes.
+- @ref CZ::ABServer "ABServer" is the service; the @ref CZ::ABProtocol "ABProtocol" namespace documents its wire protocol, and
+  ABGenerators the assets it can generate.
+*/
