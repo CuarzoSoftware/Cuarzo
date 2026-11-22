@@ -1059,3 +1059,105 @@ div.dotgraph {
 #nav-path li.footer a {
     color: var(--cz-text-muted);
 }
+
+/*
+ * Phones: member lists read like a list, not a table. The type and the name flow on one line
+ * ("void setOn(…)"), the description below them, everything aligned with the page's text (the base
+ * theme's stacked cells, pulled to the screen edges, don't mix with the column widths above).
+ */
+@media screen and (max-width: 767px) {
+    table.memberdecls,
+    table.memberdecls > tbody,
+    table.memberdecls tr:not(.inherit) {
+        display: block;
+        width: 100%;
+    }
+
+    /* Inherited members stay hidden until their section is expanded (doxygen then shows them) */
+    table.memberdecls tr.inherit {
+        width: 100%;
+    }
+
+    table.memberdecls tr[class^="memitem:"] {
+        padding-top: 10px;
+    }
+
+    table.memberdecls td.memItemLeft,
+    table.memberdecls td.memTemplItemLeft,
+    table.memberdecls td.memItemRight,
+    table.memberdecls td.memTemplItemRight {
+        display: inline !important;
+        width: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        text-align: left !important;
+        white-space: normal !important;
+        overflow-wrap: anywhere;
+    }
+
+    table.memberdecls td.memItemLeft,
+    table.memberdecls td.memTemplItemLeft {
+        padding-right: 6px !important;
+    }
+
+    table.memberdecls td.memTemplParams {
+        display: block !important;
+        margin: 0 !important;
+        padding: 10px 0 0 !important;
+        overflow-wrap: anywhere;
+    }
+
+    table.memberdecls td.mdescLeft,
+    table.memberdecls tr[class^="separator:"],
+    table.memberdecls td.memSeparator {
+        display: none !important;
+    }
+
+    table.memberdecls td.mdescRight {
+        display: block !important;
+        margin: 0 !important;
+        padding: 3px 0 4px !important;
+    }
+
+    table.memberdecls tr.heading td,
+    table.memberdecls tr.inherit_header td {
+        display: block;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* No hover blocks (they're for pointers, and the rows aren't cells anymore) */
+    table.memberdecls tr[class^="memitem:"]:hover td,
+    table.memberdecls tr[class^="memitem:"]:hover + tr[class^="memdesc:"] td {
+        background: transparent !important;
+    }
+
+    /* Detailed documentation: signatures wrap instead of overflowing */
+    div.memproto,
+    div.memproto table,
+    div.memproto td {
+        white-space: normal !important;
+        overflow-wrap: anywhere;
+    }
+
+    div.memproto table.memname,
+    div.memproto table.memname tbody,
+    div.memproto table.memname tr {
+        display: block;
+    }
+
+    div.memproto table.memname td {
+        display: inline;
+        padding: 0 !important;
+    }
+
+    /* Wide content scrolls within itself, never the page */
+    .contents table.markdownTable,
+    .contents table.cz-module-info,
+    .contents table.fieldtable,
+    .contents table.params {
+        display: block;
+        max-width: 100%;
+        overflow-x: auto;
+    }
+}

@@ -82,3 +82,8 @@ option('with_asset_broker',
        type : 'boolean',
        value : true,
        description : 'Enable building AssetBroker (shared icon/asset loading library and cz-asset-broker service)')
+
+option('with_settings',
+       type : 'boolean',
+       value : true,
+       description : 'Enable building Settings (cz-settings, the System Settings app)')

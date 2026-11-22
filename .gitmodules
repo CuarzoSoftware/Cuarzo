@@ -49,3 +49,6 @@
 [submodule "subprojects/cz-asset-broker"]
 	path = subprojects/cz-asset-broker
 	url = https://github.com/CuarzoSoftware/AssetBroker.git
+[submodule "subprojects/cz-settings"]
+	path = subprojects/cz-settings
+	url = https://github.com/CuarzoSoftware/Settings.git

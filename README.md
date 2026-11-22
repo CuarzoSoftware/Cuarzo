@@ -37,6 +37,7 @@ This repository serves as a centralized place for building the Cuarzo framework,
 - 🚀 [Shelf](https://github.com/CuarzoSoftware/Shelf) (dock)
 - 🚀 [Firmament](https://github.com/CuarzoSoftware/Firmament) (global menu bar)
 - 🚀 [Doorman](https://github.com/CuarzoSoftware/Doorman) (lock screen)
+- 🚀 [Settings](https://github.com/CuarzoSoftware/Settings) (System Settings app)
 - 🚀 [xdg-desktop-portal-cz](https://github.com/CuarzoSoftware/xdg-desktop-portal-cz) (xdg-desktop-portal backend)
 - 🚀 [QtCuarzo](https://github.com/CuarzoSoftware/QtCuarzo) (Qt platform theme)
 
@@ -68,15 +69,19 @@ $ sudo apt install git meson ninja-build build-essential pkgconf cmake glslc \
 
 #### Yoga
 
-[Yoga 3.2.1](https://github.com/facebook/yoga/releases/tag/v3.2.1) isn't packaged by these distributions, build and install it from source:
+[Yoga 3.2.1](https://github.com/facebook/yoga/releases/tag/v3.2.1) isn't packaged by these distributions, build and install it from source as a shared library, with optimizations:
 
 ```bash
 $ git clone --branch v3.2.1 --depth 1 https://github.com/facebook/yoga.git
 $ cd yoga
-$ cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=ON
+$ sed -i 's/add_library(yogacore STATIC/add_library(yogacore SHARED/' yoga/CMakeLists.txt
+$ sed -i '/add_subdirectory(tests)/d' CMakeLists.txt
+$ cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
 $ cmake --build build -j $(nproc)
 $ sudo cmake --install build
 ```
+
+Yoga's CMake project always builds a static library (`BUILD_SHARED_LIBS` has no effect), so the first `sed` makes it shared; the second one leaves out its tests, which would otherwise install GoogleTest too. Don't skip `-DCMAKE_BUILD_TYPE=Release`: without it Yoga is built without optimizations and layout becomes the main cost of every frame (e.g. while resizing a window).
 
 Screen casting in xdg-desktop-portal-cz (PipeWire) and cz-doorman-lock (PAM) are only built if their dependencies are found. Subprojects can be disabled with their `with_*` options (see `meson_options.txt`), e.g. `-Dwith_qtcuarzo=false` to build without Qt.
 

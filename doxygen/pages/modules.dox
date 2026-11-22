@@ -31,6 +31,8 @@ the logger.
 - **Events**: input (pointer, keyboard, touch and gesture events), layout, window state,
   color scheme and presentation events, all deriving from @ref CZ::CZEvent "CZEvent".
 - **Animations**: @ref CZ::CZAnimation "CZAnimation", @ref CZ::CZLinearAnimation "CZLinearAnimation" and @ref CZ::CZSpringAnimation "CZSpringAnimation".
+- **D-Bus**: @ref CZ::CZBus "CZBus" connects to the system and user buses from the event loop;
+  @ref CZ::CZBusWorker "CZBusWorker" runs blocking calls on a background thread and hands their results back to it.
 - **Utilities**: CZTransform, @ref CZ::CZRRect "CZRRect", @ref CZ::CZBitset "CZBitset", @ref CZ::CZSpFd "CZSpFd", shared memory,
   string, math and region helpers.
 */
@@ -135,8 +137,13 @@ Wayland clients (through @ref module_marco) or in compositors.
 - @ref CZ::AKNode "AKNode" is the base of every node: @ref CZ::AKContainer "AKContainer" only lays out its children,
   @ref CZ::AKRenderable "AKRenderable" draws directly, @ref CZ::AKBakeable "AKBakeable" draws into a cached image and @ref CZ::AKSubScene "AKSubScene"
   renders its children into its own image.
-- Ready to use components (buttons, text fields, scroll views, images...) and background effects
-  such as shadows and blur.
+- Ready to use components: buttons (@ref CZ::AKButton "AKButton", @ref CZ::AKIconButton "AKIconButton"), switches
+  (@ref CZ::AKSwitch "AKSwitch"), text fields (@ref CZ::AKTextInput "AKTextInput", @ref CZ::AKSearchField "AKSearchField",
+  @ref CZ::AKCoreTextEditor "AKCoreTextEditor"), settings forms (@ref CZ::AKFormSection "AKFormSection" with
+  @ref CZ::AKFormRow "AKFormRow" rows), sidebars (@ref CZ::AKSidebarList "AKSidebarList", @ref CZ::AKSidebarItem "AKSidebarItem"),
+  icons (@ref CZ::AKFontIcon "AKFontIcon", @ref CZ::AKIconTile "AKIconTile", @ref CZ::AKWiFiIcon "AKWiFiIcon"),
+  @ref CZ::AKAvatar "AKAvatar", @ref CZ::AKActivityIndicator "AKActivityIndicator", scroll views (@ref CZ::AKScroll "AKScroll"),
+  images, and background effects such as shadows and blur.
 
 Guides: @ref core_components_page, @ref creating_components_page and @ref events_page.
 */
@@ -158,9 +165,12 @@ scene, so windows, popups and panels are built with Kay nodes.
 <h2 id="module_marco_overview">Main Classes</h2>
 
 - @ref CZ::MApp "MApp" is the application; @ref CZ::MScreen "MScreen" represents an output.
-- Surface roles: @ref CZ::MToplevel "MToplevel" (windows), @ref CZ::MPopup "MPopup" and @ref CZ::MMenu "MMenu", @ref CZ::MTooltip "MTooltip",
+- Surface roles: @ref CZ::MToplevel "MToplevel" (windows), @ref CZ::MDialog "MDialog" (dialogs attached to a window),
+  @ref CZ::MPopup "MPopup" and @ref CZ::MMenu "MMenu", @ref CZ::MTooltip "MTooltip",
   @ref CZ::MSubsurface "MSubsurface", @ref CZ::MLayerSurface "MLayerSurface" (`wlr_layer_shell` panels and backgrounds) and
   @ref CZ::MSessionLockSurface "MSessionLockSurface".
+- Nodes: @ref CZ::MVibrancyView "MVibrancyView" (blurred backgrounds), @ref CZ::MSidebar "MSidebar" (a resizable window
+  sidebar with the window buttons) and the menu items (@ref CZ::MMenuView "MMenuView", @ref CZ::MMenuAction "MMenuAction").
 - Extensions for desktop components: foreign toplevel management and session locking.
 */
 

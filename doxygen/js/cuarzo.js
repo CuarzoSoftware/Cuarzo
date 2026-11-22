@@ -6,6 +6,7 @@
  *   gathered in an info table (Header / pkg-config / Module / Inherits /
  *   Inherited By), like the one at the top of Qt's class pages.
  * - "More..." links are removed from member summaries.
+ * - The descriptions of inherited members are hidden and expanded with them.
  */
 (function () {
     'use strict';
@@ -142,6 +143,25 @@
                 cells[i].classList.add('cz-kind');
     }
 
+    // Doxygen doesn't give the description rows of some inherited members (e.g. enums) the classes
+    // of their member row ("inherit <section>"), so they'd show while the section is collapsed
+    // and wouldn't be toggled with it
+    function fixInheritedDescriptions() {
+        var rows = document.querySelectorAll('table.memberdecls tr.inherit');
+
+        for (var i = 0; i < rows.length; i++) {
+            var classes = Array.prototype.filter.call(rows[i].classList, function (c) {
+                return !/^memitem:/.test(c);
+            });
+
+            for (var next = rows[i].nextElementSibling;
+                 next && /^(memdesc|separator):/.test(next.className) && !next.classList.contains('inherit');
+                 next = next.nextElementSibling)
+                for (var j = 0; j < classes.length; j++)
+                    next.classList.add(classes[j]);
+        }
+    }
+
     function run() {
         if (document.querySelector('.cz-hero'))
             document.body.classList.add('cz-home');
@@ -149,6 +169,7 @@
         buildClassInfo();
         removeMoreLinks();
         markKindCells();
+        fixInheritedDescriptions();
     }
 
     if (document.readyState === 'loading')
