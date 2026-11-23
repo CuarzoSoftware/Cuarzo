@@ -5,7 +5,8 @@ Environment variables read by the libraries of the framework, by module.
 ## Logging
 
 Every library has its own log level. Each accepts an integer, from least to most verbose:
-`0` Silent, `1` Fatal, `2` Error, `3` Warning, `4` Info, `5` Debug, `6` Trace.
+`0` Silent, `1` Fatal, `2` Error, `3` Warning, `4` Info, `5` Debug, `6` Trace. Unset, it's `2`
+(errors only).
 
 | Variable | Module |
 |---|---|
