@@ -299,3 +299,52 @@ use the same GPU buffers. Requesting the same icon, size and device again return
 - @ref CZ::ABServer "ABServer" is the service; the @ref CZ::ABProtocol "ABProtocol" namespace documents its wire protocol, and
   ABGenerators the assets it can generate.
 */
+
+/**
+@defgroup module_gazette Gazette
+@brief The notifications daemon of the Cuarzo desktop: banners and the notification center.
+
+<table class="cz-module-info">
+<tr><th>Executable</th><td><tt>cz-gazette</tt> (launched by Crystals)</td></tr>
+<tr><th>Meson option</th><td><tt>with_gazette</tt></td></tr>
+<tr><th>Built with</th><td>@ref module_marco, @ref module_kay, @ref module_services, @ref module_asset_broker</td></tr>
+</table>
+
+Gazette is an app, not a library: this page documents how it works and how other programs talk
+to it. Apps send notifications with any client of the
+[Desktop Notifications Specification](https://specifications.freedesktop.org/notification-spec/latest/)
+(`notify-send`, libnotify, GNotification, browsers...), or from Cuarzo code with
+@ref CZ::SNotificationsClient "SNotificationsClient".
+
+New notifications slide in from the right as banners (unless Do Not Disturb is on); they hide
+after a few seconds (critical ones stay) and are kept in the notification center, which slides
+in from the right when the bar's notifications button is pressed.
+
+<h2 id="module_gazette_dbus">D-Bus</h2>
+
+Both interfaces are served by @ref CZ::SNotificationsServer "SNotificationsServer" on the user bus:
+
+- `org.freedesktop.Notifications` at `/org/freedesktop/Notifications` (specification 1.2):
+  `Notify`, `CloseNotification`, `GetCapabilities` (`actions`, `body`, `body-markup`,
+  `icon-static`, `persistence`), `GetServerInformation`, and the `NotificationClosed` and
+  `ActionInvoked` signals. Hints read: `urgency`, `desktop-entry`, `image-data`, `image-path`,
+  `transient` and `resident`.
+- `org.cuarzo.Gazette` at `/org/cuarzo/Gazette` (what @ref CZ::SNotificationsClient "SNotificationsClient" controls):
+  `ToggleCenter(s screen)`, `ShowCenter(s screen)`, `HideCenter()`, `SetDoNotDisturb(b)`,
+  `GetState() → (b centerShown, b doNotDisturb, u count)` and the `StateChanged(bbu)` signal.
+
+Gazette also listens to Crystals' `org.cuarzo.Crystals` signals: `ExposeChanged` and
+`WorkspaceChanged` hide the notification center.
+
+<h2 id="module_gazette_config">Configuration and environment</h2>
+
+- Do Not Disturb is saved to `$XDG_CONFIG_HOME/cz-gazette/gazette.conf` (`[Gazette] DoNotDisturb=`).
+- `CZ_GAZETTE_LOG_LEVEL` sets its log level.
+
+<h2 id="module_gazette_overview">Main Classes</h2>
+
+- Gazette keeps the notifications and decides what's shown (Do Not Disturb, replacing, closing).
+- Notification is a received @ref CZ::SNotification "SNotification" prepared for showing.
+- BannerSurface shows the banners (a layer surface at the top right), CenterSurface the
+  notification center, and NotificationCard a notification in either.
+*/

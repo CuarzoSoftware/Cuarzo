@@ -69,7 +69,8 @@ STRIP_FROM_INC_PATH    = ../subprojects/cz-core/src \
                          ../subprojects/cz-xdgkit/src \
                          ../subprojects/cz-services/src \
                          ../subprojects/cz-heaven/src \
-                         ../subprojects/cz-asset-broker/src
+                         ../subprojects/cz-asset-broker/src \
+                         ../subprojects/cz-gazette/src
 
 INLINE_INFO            = YES
 SORT_MEMBER_DOCS       = NO
@@ -108,6 +109,7 @@ INPUT                  = pages \
                          ../subprojects/cz-services/src/CZ/Services \
                          ../subprojects/cz-heaven/src/CZ/Heaven \
                          ../subprojects/cz-asset-broker/src/CZ/AssetBroker \
+                         ../subprojects/cz-gazette/src \
                          ../subprojects/cz-kay/doxygen/md/doc \
                          ../subprojects/cz-ream/doxygen/md/Abstraction.md
 
