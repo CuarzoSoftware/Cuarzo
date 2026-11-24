@@ -28,7 +28,7 @@ This repository serves as a centralized place for building the Cuarzo framework,
 - 📚 [SRM](https://github.com/CuarzoSoftware/SRM) (library): DRM/KMS display output
 - 📚 [Louvre](https://github.com/CuarzoSoftware/Louvre) (library): Wayland compositors
 - 📚 [XDGKit](https://github.com/CuarzoSoftware/XDGKit) (library): XDG icon themes, desktop entries and MIME types
-- 📚 [Services](https://github.com/CuarzoSoftware/Services) (library): clients of the system services a desktop needs (Wi-Fi, audio)
+- 📚 [Services](https://github.com/CuarzoSoftware/Services) (library): clients of the system services a desktop needs (Wi-Fi, audio, battery, media players)
 - 📚 [AssetBroker](https://github.com/CuarzoSoftware/AssetBroker) (library and service): icons and images shared between apps
 - 📚 [Kay](https://github.com/CuarzoSoftware/Kay) (library): GUI toolkit
 - 📚 [Marco](https://github.com/CuarzoSoftware/Marco) (library): Wayland applications
