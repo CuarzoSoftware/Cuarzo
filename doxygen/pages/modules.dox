@@ -229,7 +229,8 @@ Like @ref CZ::CZCore "CZCore", each one is shared by the process: `GetOrMake()` 
   some of their channels (@ref CZ::SAudioSelection "SAudioSelection"), their volume, the input level and playing sounds.
 - @ref CZ::SStatus "SStatus": the network, volume and battery state as symbolic icon names, for a bar's indicators.
 - @ref CZ::SNowPlaying "SNowPlaying": what MPRIS media players are playing, and controlling them.
-- @ref CZ::SNotifications "SNotifications": sending desktop notifications (@ref CZ::SNotification "SNotification") and controlling Gazette.
+- @ref CZ::SNotificationsClient "SNotificationsClient" sends desktop notifications (@ref CZ::SNotification "SNotification") and controls
+  Gazette; @ref CZ::SNotificationsServer "SNotificationsServer" is the protocol side of a notifications daemon.
 */
 
 /**
