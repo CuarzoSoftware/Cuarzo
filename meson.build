@@ -17,10 +17,11 @@ qtcuarzo_op     = get_option('with_qtcuarzo')
 portal_op       = get_option('with_portal')
 doorman_op      = get_option('with_doorman')
 settings_op     = get_option('with_settings')
-marco_op        = get_option('with_marco') or firmament_op or shelf_op or desk_op or doorman_op or settings_op
+gazette_op      = get_option('with_gazette')
+marco_op        = get_option('with_marco') or firmament_op or shelf_op or desk_op or doorman_op or settings_op or gazette_op
 heaven_op       = get_option('with_heaven') or firmament_op or desk_op or qtcuarzo_op
 kay_op          = get_option('with_kay') or marco_op
-asset_broker_op = get_option('with_asset_broker') or shelf_op or desk_op or firmament_op or kay_op
+asset_broker_op = get_option('with_asset_broker') or shelf_op or desk_op or firmament_op or gazette_op or kay_op
 xdgkit_op       = get_option('with_xdgkit') or marco_op or doorman_op or asset_broker_op
 louvre_op       = get_option('with_louvre') or crystals_op
 srm_op          = get_option('with_srm') or louvre_op
@@ -98,6 +99,10 @@ endif
 
 if settings_op
     cz_settings_proj = subproject('cz-settings')
+endif
+
+if gazette_op
+    cz_gazette_proj  = subproject('cz-gazette')
 endif
 
 # Documentation of every library (one site, each library a module): `meson compile docs`

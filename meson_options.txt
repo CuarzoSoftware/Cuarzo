@@ -87,3 +87,8 @@ option('with_settings',
        type : 'boolean',
        value : true,
        description : 'Enable building Settings (cz-settings, the System Settings app)')
+
+option('with_gazette',
+       type : 'boolean',
+       value : true,
+       description : 'Enable building Gazette (cz-gazette, the notifications daemon: banners and notification center)')

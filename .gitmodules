@@ -52,3 +52,6 @@
 [submodule "subprojects/cz-settings"]
 	path = subprojects/cz-settings
 	url = https://github.com/CuarzoSoftware/Settings.git
+[submodule "subprojects/cz-gazette"]
+	path = subprojects/cz-gazette
+	url = https://github.com/CuarzoSoftware/Gazette.git

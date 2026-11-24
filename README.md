@@ -38,6 +38,7 @@ This repository serves as a centralized place for building the Cuarzo framework,
 - 🚀 [Firmament](https://github.com/CuarzoSoftware/Firmament) (global menu bar)
 - 🚀 [Doorman](https://github.com/CuarzoSoftware/Doorman) (lock screen)
 - 🚀 [Settings](https://github.com/CuarzoSoftware/Settings) (System Settings app)
+- 🚀 [Gazette](https://github.com/CuarzoSoftware/Gazette) (notifications: banners and notification center)
 - 🚀 [xdg-desktop-portal-cz](https://github.com/CuarzoSoftware/xdg-desktop-portal-cz) (xdg-desktop-portal backend)
 - 🚀 [QtCuarzo](https://github.com/CuarzoSoftware/QtCuarzo) (Qt platform theme)
 
