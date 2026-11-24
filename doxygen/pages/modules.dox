@@ -208,7 +208,7 @@ database and the trash.
 @brief Clients of the system and session services a desktop shell needs: Wi-Fi, audio, status indicators, media players and notifications.
 
 <table class="cz-module-info">
-<tr><th>Header</th><td><tt>\#include <CZ/Services/SWiFi.h></tt></td></tr>
+<tr><th>Header</th><td><tt>\#include <CZ/Services/SVWiFi.h></tt></td></tr>
 <tr><th>pkg-config</th><td><tt>cz-services</tt></td></tr>
 <tr><th>Meson</th><td><tt>dependency('cz-services')</tt></td></tr>
 <tr><th>Depends on</th><td>@ref module_core, libsystemd (sd-bus)</td></tr>
@@ -223,14 +223,14 @@ Like @ref CZ::CZCore "CZCore", each one is shared by the process: `GetOrMake()` 
 
 <h2 id="module_services_overview">Main Classes</h2>
 
-- @ref CZ::SWiFi "SWiFi": NetworkManager's Wi-Fi. Turning it on and off, the networks in range
-  (@ref CZ::SWiFiNetwork "SWiFiNetwork"), joining (asking for passwords), forgetting them and their Auto-Join.
-- @ref CZ::SAudio "SAudio": the audio devices of PipeWire or PulseAudio. The default output and input, or just
-  some of their channels (@ref CZ::SAudioSelection "SAudioSelection"), their volume, the input level and playing sounds.
-- @ref CZ::SStatus "SStatus": the network, volume and battery state as symbolic icon names, for a bar's indicators.
-- @ref CZ::SNowPlaying "SNowPlaying": what MPRIS media players are playing, and controlling them.
-- @ref CZ::SNotificationsClient "SNotificationsClient" sends desktop notifications (@ref CZ::SNotification "SNotification") and controls
-  Gazette; @ref CZ::SNotificationsServer "SNotificationsServer" is the protocol side of a notifications daemon.
+- @ref CZ::SVWiFi "SVWiFi": NetworkManager's Wi-Fi. Turning it on and off, the networks in range
+  (@ref CZ::SVWiFiNetwork "SVWiFiNetwork"), joining (asking for passwords), forgetting them and their Auto-Join.
+- @ref CZ::SVAudio "SVAudio": the audio devices of PipeWire or PulseAudio. The default output and input, or just
+  some of their channels (@ref CZ::SVAudioSelection "SVAudioSelection"), their volume, the input level and playing sounds.
+- @ref CZ::SVStatus "SVStatus": the network, volume and battery state as symbolic icon names, for a bar's indicators.
+- @ref CZ::SVNowPlaying "SVNowPlaying": what MPRIS media players are playing, and controlling them.
+- @ref CZ::SVNotificationsClient "SVNotificationsClient" sends desktop notifications (@ref CZ::SVNotification "SVNotification") and controls
+  Gazette; @ref CZ::SVNotificationsServer "SVNotificationsServer" is the protocol side of a notifications daemon.
 */
 
 /**
