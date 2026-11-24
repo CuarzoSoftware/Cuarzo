@@ -205,7 +205,7 @@ database and the trash.
 
 /**
 @defgroup module_services Services
-@brief Clients of the system and session services a desktop shell needs: Wi-Fi.
+@brief Clients of the system and session services a desktop shell needs: Wi-Fi and audio.
 
 <table class="cz-module-info">
 <tr><th>Header</th><td><tt>\#include <CZ/Services/SWiFi.h></tt></td></tr>
@@ -222,6 +222,8 @@ with signals. Without the service (or its hardware) its state says it isn't avai
 
 - @ref CZ::SWiFi "SWiFi": NetworkManager's Wi-Fi. Turning it on and off, the networks in range
   (@ref CZ::SWiFiNetwork "SWiFiNetwork"), joining (asking for passwords), forgetting them and their Auto-Join.
+- @ref CZ::SAudio "SAudio": the audio devices of PipeWire or PulseAudio. The default output and input, or just
+  some of their channels (@ref CZ::SAudioSelection "SAudioSelection"), their volume, the input level and playing sounds.
 */
 
 /**

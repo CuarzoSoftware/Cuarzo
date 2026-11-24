@@ -21,7 +21,7 @@
 <div class="cz-card cz-orange"><div class="cz-card-title">@ref module_kay</div><div class="cz-card-text">GPU-accelerated GUI toolkit: a scene of nodes laid out with Yoga and drawn with Skia or Ream.</div><span class="cz-pkg">cz-kay</span></div>
 <div class="cz-card cz-green"><div class="cz-card-title">@ref module_marco</div><div class="cz-card-text">Library for building Wayland applications with Kay.</div><span class="cz-pkg">cz-marco</span></div>
 <div class="cz-card cz-blue"><div class="cz-card-title">@ref module_xdgkit</div><div class="cz-card-text">XDG specifications: icon themes, desktop entries, MIME types and the trash.</div><span class="cz-pkg">cz-xdgkit</span></div>
-<div class="cz-card cz-orange"><div class="cz-card-title">@ref module_services</div><div class="cz-card-text">Clients of the system services a desktop needs: Wi-Fi.</div><span class="cz-pkg">cz-services</span></div>
+<div class="cz-card cz-orange"><div class="cz-card-title">@ref module_services</div><div class="cz-card-text">Clients of the system services a desktop needs: Wi-Fi and audio.</div><span class="cz-pkg">cz-services</span></div>
 <div class="cz-card cz-purple"><div class="cz-card-title">@ref module_heaven</div><div class="cz-card-text">Global menus for Wayland sessions over D-Bus.</div><span class="cz-pkg">cz-heaven-*</span></div>
 <div class="cz-card cz-red"><div class="cz-card-title">@ref module_asset_broker</div><div class="cz-card-text">Icon and image loading shared between apps as DMA-bufs.</div><span class="cz-pkg">cz-asset-broker</span></div>
 </div>
