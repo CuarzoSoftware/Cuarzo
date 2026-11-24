@@ -22,7 +22,6 @@ Every library has its own log level. Each accepts an integer, from least to most
 | `CZ_SERVICES_LOG_LEVEL` | @ref module_services |
 | `CZ_HEAVEN_BAR_LOG_LEVEL`, `CZ_HEAVEN_CLIENT_LOG_LEVEL`, `CZ_HEAVEN_COMPOSITOR_LOG_LEVEL` | @ref module_heaven |
 | `CZ_ASSET_BROKER_LOG_LEVEL` | @ref module_asset_broker |
-| `CZ_GAZETTE_LOG_LEVEL` | @ref module_gazette |
 
 ## Ream
 

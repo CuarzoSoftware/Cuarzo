@@ -30,7 +30,6 @@ MODULES = {
     'cz-services':     'module_services',
     'cz-heaven':       'module_heaven',
     'cz-asset-broker': 'module_asset_broker',
-    'cz-gazette':      'module_gazette',
 }
 
 # Submodules: (subproject dir, directory under it) -> group id. Heaven's three

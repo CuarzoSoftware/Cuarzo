@@ -33,6 +33,7 @@ jobs:
             subprojects/cz-kay \
             subprojects/cz-marco \
             subprojects/cz-xdgkit \
+            subprojects/cz-services \
             subprojects/cz-heaven \
             subprojects/cz-asset-broker
 

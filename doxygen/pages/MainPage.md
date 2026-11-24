@@ -78,7 +78,7 @@ The Cuarzo desktop is made of these projects, built and installed together with 
 | [Firmament](https://github.com/CuarzoSoftware/Firmament) | Global menu bar and control panel | @ref module_marco, @ref module_heaven, @ref module_services |
 | [Doorman](https://github.com/CuarzoSoftware/Doorman) | Lock screen | @ref module_marco |
 | [Settings](https://github.com/CuarzoSoftware/Settings) | System Settings app | @ref module_marco, @ref module_services |
-| [Gazette](https://github.com/CuarzoSoftware/Gazette) | Notifications: banners and notification center (see @ref module_gazette) | @ref module_marco, @ref module_services |
+| [Gazette](https://github.com/CuarzoSoftware/Gazette) | Notifications: banners and notification center | @ref module_marco, @ref module_services |
 | [xdg-desktop-portal-cz](https://github.com/CuarzoSoftware/xdg-desktop-portal-cz) | xdg-desktop-portal backend (screen casting) | @ref module_core |
 | [QtCuarzo](https://github.com/CuarzoSoftware/QtCuarzo) | Qt platform theme (global menus, theme) | @ref module_heaven |
 
