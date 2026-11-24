@@ -20,6 +20,7 @@
         'Kay': 'cz-kay',
         'Marco': 'cz-marco',
         'XDGKit': 'cz-xdgkit',
+        'Services': 'cz-services',
         'Heaven Bar': 'cz-heaven-bar',
         'Heaven Client': 'cz-heaven-client',
         'Heaven Compositor': 'cz-heaven-compositor',

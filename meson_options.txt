@@ -23,6 +23,11 @@ option('with_louvre',
        value : true,
        description : 'Enable building Louvre')
 
+option('with_services',
+       type : 'boolean',
+       value : true,
+       description : 'Enable building Services')
+
 option('with_kay',
        type : 'boolean',
        value : true,

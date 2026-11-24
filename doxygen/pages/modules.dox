@@ -204,6 +204,27 @@ database and the trash.
 */
 
 /**
+@defgroup module_services Services
+@brief Clients of the system and session services a desktop shell needs: Wi-Fi.
+
+<table class="cz-module-info">
+<tr><th>Header</th><td><tt>\#include <CZ/Services/SWiFi.h></tt></td></tr>
+<tr><th>pkg-config</th><td><tt>cz-services</tt></td></tr>
+<tr><th>Meson</th><td><tt>dependency('cz-services')</tt></td></tr>
+<tr><th>Depends on</th><td>@ref module_core, libsystemd (sd-bus)</td></tr>
+</table>
+
+Each service is a class of its own, independent from the others: it talks to its service over
+D-Bus off the UI thread (see @ref CZ::CZBusWorker "CZBusWorker") and tells when its state changed
+with signals. Without the service (or its hardware) its state says it isn't available.
+
+<h2 id="module_services_overview">Main Classes</h2>
+
+- @ref CZ::SWiFi "SWiFi": NetworkManager's Wi-Fi. Turning it on and off, the networks in range
+  (@ref CZ::SWiFiNetwork "SWiFiNetwork"), joining (asking for passwords), forgetting them and their Auto-Join.
+*/
+
+/**
 @defgroup module_heaven Heaven
 @brief Global menus for Wayland sessions over D-Bus.
 

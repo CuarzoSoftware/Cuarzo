@@ -67,6 +67,7 @@ STRIP_FROM_INC_PATH    = ../subprojects/cz-core/src \
                          ../subprojects/cz-kay/src \
                          ../subprojects/cz-marco/src \
                          ../subprojects/cz-xdgkit/src \
+                         ../subprojects/cz-services/src \
                          ../subprojects/cz-heaven/src \
                          ../subprojects/cz-asset-broker/src
 
@@ -104,6 +105,7 @@ INPUT                  = pages \
                          ../subprojects/cz-kay/src/CZ/AK \
                          ../subprojects/cz-marco/src/CZ/Marco \
                          ../subprojects/cz-xdgkit/src/CZ/XDG \
+                         ../subprojects/cz-services/src/CZ/Services \
                          ../subprojects/cz-heaven/src/CZ/Heaven \
                          ../subprojects/cz-asset-broker/src/CZ/AssetBroker \
                          ../subprojects/cz-kay/doxygen/md/doc \

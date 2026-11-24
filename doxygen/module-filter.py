@@ -27,6 +27,7 @@ MODULES = {
     'cz-kay':          'module_kay',
     'cz-marco':        'module_marco',
     'cz-xdgkit':       'module_xdgkit',
+    'cz-services':     'module_services',
     'cz-heaven':       'module_heaven',
     'cz-asset-broker': 'module_asset_broker',
 }
