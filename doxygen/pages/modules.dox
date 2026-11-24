@@ -205,7 +205,7 @@ database and the trash.
 
 /**
 @defgroup module_services Services
-@brief Clients of the system and session services a desktop shell needs: Wi-Fi, audio, status indicators and media players.
+@brief Clients of the system and session services a desktop shell needs: Wi-Fi, audio, status indicators, media players and notifications.
 
 <table class="cz-module-info">
 <tr><th>Header</th><td><tt>\#include <CZ/Services/SWiFi.h></tt></td></tr>
@@ -218,6 +218,9 @@ Each service is a class of its own, independent from the others: it talks to its
 D-Bus off the UI thread (see @ref CZ::CZBusWorker "CZBusWorker") and tells when its state changed
 with signals. Without the service (or its hardware) its state says it isn't available.
 
+Like @ref CZ::CZCore "CZCore", each one is shared by the process: `GetOrMake()` returns the instance
+(made on first use), which lives while some shared pointer to it does.
+
 <h2 id="module_services_overview">Main Classes</h2>
 
 - @ref CZ::SWiFi "SWiFi": NetworkManager's Wi-Fi. Turning it on and off, the networks in range
@@ -226,6 +229,7 @@ with signals. Without the service (or its hardware) its state says it isn't avai
   some of their channels (@ref CZ::SAudioSelection "SAudioSelection"), their volume, the input level and playing sounds.
 - @ref CZ::SStatus "SStatus": the network, volume and battery state as symbolic icon names, for a bar's indicators.
 - @ref CZ::SNowPlaying "SNowPlaying": what MPRIS media players are playing, and controlling them.
+- @ref CZ::SNotifications "SNotifications": sending desktop notifications (@ref CZ::SNotification "SNotification") and controlling Gazette.
 */
 
 /**
