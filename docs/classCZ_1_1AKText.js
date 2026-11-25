@@ -1,0 +1,36 @@
+var classCZ_1_1AKText =
+[
+    [ "Changes", "classCZ_1_1AKText.html#aada75e543d2eadaa69533d17cac8bd9a", [
+      [ "CHParagraphStyle", "classCZ_1_1AKText.html#aada75e543d2eadaa69533d17cac8bd9aa0c2e3599a6b3277f53ed02b8b367bcbb", null ],
+      [ "CHTextStyle", "classCZ_1_1AKText.html#aada75e543d2eadaa69533d17cac8bd9aa90d758b4adda3b7860059836c6ccb1d2", null ],
+      [ "CHText", "classCZ_1_1AKText.html#aada75e543d2eadaa69533d17cac8bd9aa735ce4ef008296c212edb446df6e7477", null ],
+      [ "CHSelection", "classCZ_1_1AKText.html#aada75e543d2eadaa69533d17cac8bd9aa232bbf909deb826acee33f211dfa95a0", null ],
+      [ "CHFontSize", "classCZ_1_1AKText.html#aada75e543d2eadaa69533d17cac8bd9aa6de1c894e333024d5e590616cc08eedf", null ],
+      [ "CHFontFamilies", "classCZ_1_1AKText.html#aada75e543d2eadaa69533d17cac8bd9aaedbf6a2ed3c68716c48d1be124558ee7", null ],
+      [ "CHFontStyle", "classCZ_1_1AKText.html#aada75e543d2eadaa69533d17cac8bd9aa1cf1544d2225b1c0a69e04c3d6693fec", null ],
+      [ "CHColor", "classCZ_1_1AKText.html#aada75e543d2eadaa69533d17cac8bd9aa9f379c7cdeca699f882953b21b3c7fcd", null ],
+      [ "CHLetterSpacing", "classCZ_1_1AKText.html#aada75e543d2eadaa69533d17cac8bd9aa356d2c4ee52e1fdc99c84485d32c91cf", null ],
+      [ "CHLineHeight", "classCZ_1_1AKText.html#aada75e543d2eadaa69533d17cac8bd9aa6ce55d712c46b5941b3f910c642bdeef", null ],
+      [ "CHLast", "classCZ_1_1AKText.html#aada75e543d2eadaa69533d17cac8bd9aaf16f81cc6e38c32ce06967b9c6790c1e", null ]
+    ] ],
+    [ "AKText", "classCZ_1_1AKText.html#a2429e22e56f44b5a96be1908ce76afc0", null ],
+    [ "setText", "classCZ_1_1AKText.html#a9f56fee14dd404672a53f45264658755", null ],
+    [ "text", "classCZ_1_1AKText.html#afe035367674094b2f00df5ce732fbc7d", null ],
+    [ "skText", "classCZ_1_1AKText.html#ae6f491c39a4a61ddf02883c20aff1951", null ],
+    [ "setTextStyle", "classCZ_1_1AKText.html#aa66137b913cb47b7d8a647189ce07262", null ],
+    [ "setFontSize", "classCZ_1_1AKText.html#acebbbc43c612343c10dd6b3f9c66cac2", null ],
+    [ "setFontFamilies", "classCZ_1_1AKText.html#a0d97380f5d005fa4dd9a56b07d05b561", null ],
+    [ "setFontStyle", "classCZ_1_1AKText.html#a023d0f5f95bf3b1e9313c60023db1fb9", null ],
+    [ "setTextColor", "classCZ_1_1AKText.html#aad3682878b86720bf183142708495484", null ],
+    [ "setLetterSpacing", "classCZ_1_1AKText.html#ab63c65ccef85c515102f3320836d5c1b", null ],
+    [ "setLineHeight", "classCZ_1_1AKText.html#a4a3a60144bb6bcc2c4cd07e59fd09275", null ],
+    [ "setSelection", "classCZ_1_1AKText.html#a42c9f47dc7ef5984e90343c156e5352f", null ],
+    [ "selection", "classCZ_1_1AKText.html#a0e57aaaa0de4d3bf7a2a68ea492819fe", null ],
+    [ "codePointAt", "classCZ_1_1AKText.html#acd9be618a711fc7e057d86e89fd5df09", null ],
+    [ "glyphAtCodePoint", "classCZ_1_1AKText.html#a826b42dcc6f36c014bf2ff0eb2a94f24", null ],
+    [ "codePointByteOffsets", "classCZ_1_1AKText.html#ad8f06a1000e1a2b6c55d0506bd0fa10a", null ],
+    [ "codePointByteOffset", "classCZ_1_1AKText.html#acdad6445aa8b5d75666af09631772038", null ],
+    [ "bakeEvent", "classCZ_1_1AKText.html#a2d9ca53436f3e11fc53787bb6c2faf4a", null ],
+    [ "onSelectionChanged", "classCZ_1_1AKText.html#a496a7b4c3baee2c57d2ce503971c005a", null ],
+    [ "onTextChanged", "classCZ_1_1AKText.html#a8e2715cabd85d9b11b45a5cc74d1b2ed", null ]
+];

@@ -1,0 +1,26 @@
+var searchData=
+[
+  ['background_0',['background',['../classCZ_1_1MDialog.html#ac5a9fd5a80cfc7b02154daf99c4b3c19',1,'CZ::MDialog']]],
+  ['backgroundblurmanager_1',['backgroundBlurManager',['../classCZ_1_1MApp.html#a4b4a0a09d5dfb1c4075d03e4e195e591',1,'CZ::MApp::Wayland']]],
+  ['bars_2',['bars',['../classCZ_1_1AKWiFiIcon.html#a82e1ff2d24e84ffbab7c1d47293c7566',1,'CZ::AKWiFiIcon']]],
+  ['batteryicon_3',['batteryIcon',['../classCZ_1_1SVStatus.html#aa0439659e0d6e7eb73ee232c7aa8a1dd',1,'CZ::SVStatus']]],
+  ['batteryinfo_4',['batteryInfo',['../classCZ_1_1SVStatus.html#a18a0127665639b9fb0bde20f1694e160',1,'CZ::SVStatus']]],
+  ['batteryonpower_5',['batteryOnPower',['../classCZ_1_1SVStatus.html#ab91bed9e4fbeecc5ce0d814e0c48228d',1,'CZ::SVStatus']]],
+  ['batterypercent_6',['batteryPercent',['../classCZ_1_1SVStatus.html#a73b10cdc1fd802c449c486c06d366ad1',1,'CZ::SVStatus']]],
+  ['batterywarning_7',['batteryWarning',['../classCZ_1_1SVStatus.html#a7c1ca9adaadc8f6dcca0f25bed43aa1f',1,'CZ::SVStatus']]],
+  ['bdt_8',['bdt',['../classCZ_1_1AKNode.html#ab5315df1ee50a84ee55183461f8b14bc',1,'CZ::AKNode']]],
+  ['bindcell_9',['bindCell',['../classCZ_1_1AKGridView.html#a492b099bc0771d99a38211f55c2ab59f',1,'CZ::AKGridView']]],
+  ['black_10',['Black',['../classCZ_1_1AKTheme.html#ab1a29e7e37e93ecd0386c7b3a77fc5ca',1,'CZ::AKTheme']]],
+  ['blendmode_11',['blendMode',['../classCZ_1_1RPainter.html#a96c31a87a060c3bbbcd5bfc23c91b868',1,'CZ::RPainter::State']]],
+  ['blockheight_12',['blockHeight',['../structCZ_1_1RFormatInfo.html#acee8c16a726aceee7713a00a3e9a84f0',1,'CZ::RFormatInfo']]],
+  ['blockwidth_13',['blockWidth',['../structCZ_1_1RFormatInfo.html#a0c9eb3b2affba6a89471e359110e6ff5',1,'CZ::RFormatInfo']]],
+  ['body_14',['body',['../structCZ_1_1SVNotification.html#a22ffc871c8cdced782372446356096a5',1,'CZ::SVNotification']]],
+  ['borderradius_15',['BorderRadius',['../classCZ_1_1MTooltip.html#a8100c9bb4314749b03dff4bf7c584ea4',1,'CZ::MTooltip']]],
+  ['bottom_16',['bottom',['../structCZ_1_1LMargins.html#a71b896b694136b3dbfcae7231acb5856',1,'CZ::LMargins']]],
+  ['bounds_17',['bounds',['../classCZ_1_1LToplevelRole.html#adc030bda5da4b2947af4f49dc3efeb13',1,'CZ::LToplevelRole::State::bounds'],['../classCZ_1_1LToplevelRole.html#adc030bda5da4b2947af4f49dc3efeb13',1,'CZ::LToplevelRole::Configuration::bounds']]],
+  ['bpp_18',['bpp',['../structCZ_1_1RFormatInfo.html#af8ec0e42c6dd22b5937f43e21b94b4e6',1,'CZ::RFormatInfo']]],
+  ['button_19',['button',['../classCZ_1_1CZPointerButtonEvent.html#a02bb3239281eae4e619ebd084b9bb733',1,'CZ::CZPointerButtonEvent::button'],['../classCZ_1_1LClient.html#aab6cc70edbc84d5266834bca354f2b38',1,'CZ::LClient::PointerHistory::button'],['../classCZ_1_1AKPointer.html#adc71b531994cb6f6f196fa370cff08a5',1,'CZ::AKPointer::EventHistory::button']]],
+  ['buttonindex_20',['buttonIndex',['../classCZ_1_1LClient.html#a9909e47e7ceb3739cd0c4d018d069fec',1,'CZ::LClient::PointerHistory']]],
+  ['buttontextstyle_21',['ButtonTextStyle',['../classCZ_1_1AKTheme.html#a986b0fa86083c8f850bd82a14868815b',1,'CZ::AKTheme']]],
+  ['bytesperblock_22',['bytesPerBlock',['../structCZ_1_1RFormatInfo.html#a3b4558c3fa0dd5700f6acc9639ffc6ef',1,'CZ::RFormatInfo']]]
+];
