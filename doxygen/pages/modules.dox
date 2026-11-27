@@ -142,7 +142,8 @@ Wayland clients (through @ref module_marco) or in compositors.
   (@ref CZ::AKSegmentedControl "AKSegmentedControl"), sliders (@ref CZ::AKSlider "AKSlider"), level meters
   (@ref CZ::AKLevelIndicator "AKLevelIndicator"), text fields (@ref CZ::AKTextInput "AKTextInput", @ref CZ::AKSearchField "AKSearchField",
   @ref CZ::AKCoreTextEditor "AKCoreTextEditor"), settings forms (@ref CZ::AKFormSection "AKFormSection" with
-  @ref CZ::AKFormRow "AKFormRow" rows), sidebars (@ref CZ::AKSidebarList "AKSidebarList", @ref CZ::AKSidebarItem "AKSidebarItem"),
+  @ref CZ::AKFormRow "AKFormRow" rows), inspectors (collapsible @ref CZ::AKDisclosureSection "AKDisclosureSection" sections with
+  @ref CZ::AKInfoRow "AKInfoRow" label/value rows), sidebars (@ref CZ::AKSidebarList "AKSidebarList", @ref CZ::AKSidebarItem "AKSidebarItem"),
   icons (@ref CZ::AKFontIcon "AKFontIcon", @ref CZ::AKIconTile "AKIconTile", @ref CZ::AKWiFiIcon "AKWiFiIcon"),
   @ref CZ::AKAvatar "AKAvatar", @ref CZ::AKActivityIndicator "AKActivityIndicator", scroll views (@ref CZ::AKScroll "AKScroll"),
   images, and background effects such as shadows and blur.
